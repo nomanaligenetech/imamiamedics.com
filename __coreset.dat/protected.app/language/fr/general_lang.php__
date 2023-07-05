@@ -1,0 +1,304 @@
+<?php
+$lang['text_norecordfound'] = "Aucun Enregistrement Trouvé";
+
+$lang['heading_managestations'] = "Gérer les stations";
+$lang['heading_manageaffiliates'] = "Gérer les affiliés";
+$lang['heading_manageparameters'] = "Gérer les paramètres";
+$lang['heading_managemyaccount'] = "Gérer mon compte";
+$lang['heading_manageresorts'] = "Gérer le (s) complexe (s)";
+$lang['heading_manageresortspromotions'] = "Gérer les promotions des complexes";
+$lang['heading_manageresortspromotionstypes'] = "Gérer les types de promotions des complexes";
+$lang['heading_manageimagegallerycategory'] = "Gérer la catégorie de la galerie d'images";
+$lang['heading_manageimagegallery'] = "Gérer la galerie d'images";
+$lang['heading_managevideogallery'] = "Gérer la galerie vidéo";
+$lang['heading_managerecommendation'] = "Gérer la recommandation";
+$lang['heading_managemenu'] = "Gérer le menu";
+$lang['heading_managesitesettings'] = "Gérer les paramètres du site";
+
+
+$lang['heading_dashboard'] = "Tableau de bord";
+$lang['operation_delete_success'] = "Enregistrement (s) supprimé (s) avec succès";
+$lang['operation_delete_active_conference'] = "Enregistrement (s) supprimé (s) avec succès (à l'exclusion de la conférence active) ";
+$lang['operation_copy_success'] = "Enregistrement (s) copié (s) avec succès";
+$lang['operation_saved_success'] = "Enregistrement (s) enregistré (s) avec succès";
+$lang['heading_operation_success'] = "Succès";
+$lang['heading_operation_error'] = "Erreur";
+
+$lang['heading_operation_logout_success'] = "Déconnexion réussie!";
+$lang['message_please_login_admin'] = "Veuillez saisir votre utilisateur et votre mot de passe pour vous connecter";
+
+$lang['text_category_name'] = "Nom de catégorie";
+$lang['text_image_name'] = "Nom de l'image";
+$lang['text_update_sort'] = "Mettre à jour le tri";
+
+
+$lang['text_video_name'] = "Nom de la vidéo";
+$lang['text_title'] = "Titre";
+$lang['text_name'] = "Nom";
+$lang['text_email'] = "E-mail";
+$lang['text_subject'] = "Matière";
+$lang['text_inquiries'] = "Demandes";
+$lang['text_date'] = "Date";
+$lang['text_username'] = "Nom d'utilisateur";
+$lang['text_anchor'] = "Ancre";
+$lang['text_sorting'] = "Tri";
+
+$lang['text_code'] = "Code";
+$lang['text_label'] = "Étiquette";
+$lang['text_amount'] = "Montant";
+$lang['text_prefix'] = "Préfixe";
+$lang['text_order'] = "Ordre";
+
+
+$lang['text_option'] = "Option";
+$lang['text_add'] = "Ajouter";
+$lang['text_edit'] = "Éditer";
+$lang['text_view'] = "Vue";
+$lang['text_delete'] = "Supprimer";
+$lang['text_save'] = "sauvegarder";
+$lang['text_cancel'] = "Annuler";
+$lang['text_refresh'] = "Rafraîchir";
+$lang['text_undo'] = "annuler";
+$lang['text_signout'] = "Déconnexion";
+
+$lang['text_facilities'] = "Installations";
+$lang['text_maps'] = "Plans";
+$lang['text_tax&service_included'] = "(Les prix indiqués incluent les taxes et les frais de service)";
+$lang['text_arrivaldate'] = "Date d'arrivée";
+$lang['text_departuredate'] = "Date de départ";
+$lang['text_nights'] = "Nuits";
+$lang['text_onlinebooking'] = "Réservation en ligne";
+$lang['text_dateofarrival'] = "Date d'arrivée";
+$lang['text_roomdetails'] = "Détails de la chambre";
+$lang['text_nightsperseason'] = "Nuits par saison";
+$lang['text_priceperday'] = "Prix ​​par jour";
+$lang['text_baluponarrival']	= "Solde payable à l'arrivée";
+$lang['text_personalinfo']	= "Informations personnelles";
+$lang['text_2easypayoptions']	= "Deux options de paiement faciles";
+$lang['text_securecardpyament']	= "Paiement sécurisé par carte de crédit";
+$lang['text_directbanktransfer']	= "Virement bancaire direct";
+$lang['text_1.']	= "1. ";
+$lang['text_2.']	= "2. ";
+$lang['text_fullpayment']	= "( Règlement de la totalité )";
+$lang['text_choosepaymentoption']	= "Choisissez l'option de paiement";
+$lang['text_reviewterms&conditions']	= "* Veuillez consulter les termes et conditions.";
+$lang['text_iagreetotc&cp']	= "J'accepte les %s et %s.";
+$lang['text_firstname']	= "Prénom";
+$lang['text_middlename']	= "Deuxième nom";
+$lang['text_lastname']	= "Nom de famille";
+$lang['text_confirmemailaddress']	= "Confirmez votre adresse email";
+$lang['text_phonenumber']	= "Numéro de téléphone";
+$lang['text_cellphonenumber']	= "Numéro de téléphone portable";
+$lang['text_destinationhotel']	= "Hôtel de destination";
+$lang['text_addtionalreq_or_inq']	= "Demandes ou demandes supplémentaires: (facultatif)";
+$lang['text_discount']	= "Remise";
+$lang['text_discountedgrandtotal']	= "Total général réduit";
+$lang['text_noofadults']	= "Nombre d'adultes ";
+$lang['text_noofchildren']	= "Nombre d'enfants";
+$lang['text_ageofchildren']	= "Âge des enfants";
+$lang['text_seperatedbycommas']	= "(Séparé par des virgules)";
+$lang['text_promocode']	= "Code promo";
+$lang['text_validatepromocode']	= "VALIDER LE PROMOCODE";
+
+
+$lang['text_promocode%discount']	= "Code promotionnel% réduction:";
+$lang['text_country']	= "Pays";
+$lang['text_promoincludes']	= "La promotion comprend";
+$lang['text_validatepromo-code']	= "valider le code promo";
+$lang['text_clickonpromocode_heading']	= "Vous n'avez pas cliqué sur " . $lang['text_validatepromo-code'];
+$lang['text_clickonpromocode_message']	= "Assurez-vous de cliquer'". $lang['text_validatepromo-code'] ."' après avoir tapé votre code promotionnel - Voulez-vous continuer avec PromoCode?";
+$lang['text_pleasefillouttheform']	= "Veuillez remplir le formulaire.";
+$lang['text_legal']	= "Légal";
+$lang['text_about'] = "À propos de nous";
+
+$lang['text_description_1'] = "Description 1";
+$lang['text_description_2'] = "Description 2";
+$lang['text_contactinfo'] = "Informations de contact";
+$lang['text_information'] = "Information";
+$lang['text_rooms'] = "Pièces";
+$lang['text_addnote'] = 'Note supplémentaire';
+$lang['text_paymenttype'] = 'Type de paiement';
+$lang['text_cvccode'] = 'Le code CVC';
+$lang['text_expiryyear'] = "Année d'expiration";
+$lang['text_expirymonth'] = "Mois d'expiration";
+$lang['text_cardno'] = 'Numéro de carte';
+$lang['text_cardholdername'] = 'Nom du titulaire';
+$lang['text_selectsubactivity'] = 'Sélectionnez une sous-activité';
+$lang['text_selectnoofpeople'] = 'Sélectionnez le nombre de personnes';
+$lang['text_hotel'] = 'Hôtel';
+$lang['text_securitycode'] = 'Code de sécurité';
+$lang['text_arrival'] = 'Arrivée';
+$lang['text_departure'] = 'Départ';
+$lang['text_arrivalairport'] = "Aéroport d'arrivée";
+$lang['text_departureairport'] = 'Aéroport de départ';
+$lang['text_perperson'] = 'Par personne';
+$lang['text_perpersonprice'] = 'Prix ​​par personne';
+$lang['text_totalcost'] = 'Coût total';
+$lang['text_note:morethan10'] = "Remarque: si votre groupe compte 10 personnes ou plus, veuillez nous envoyer un e-mail à l'adresse %s";
+$lang['text_noofpeople'] = 'Nombre de personnes';
+$lang['text_arrivaltime'] = "Heure d'arrivée";
+$lang['text_arrivalairline'] = "Compagnie aérienne d'arrivée";
+$lang['text_arrivalflightno'] = "Numéro du vol d'arrivée";
+$lang['text_departuretime'] = "Heure de départ";
+$lang['text_departureairline'] = "Compagnie aérienne de départ";
+$lang['text_departureflightno'] = "Numéro de vol de départ";
+$lang['text_personalinfo'] = "Informations personnelles";
+$lang['text_flightinfo'] = "Information de vol";
+$lang['text_servicecharge'] = "Frais de service";
+$lang['text_tax'] = "Impôt";
+$lang['text_transfertype'] = "Type de transfert";
+$lang['text_priceperperson'] = "Prix ​​par personne";
+$lang['text_transfer'] = "Transfert";
+$lang['text_bookingcode'] = "Numéro de réservation";
+$lang['text_arrivalminutes'] = "Minutes d'arrivée";
+$lang['text_arrivalflightno'] = "Numéro de fichier d'arrivée";
+$lang['text_departureminutes'] = "Minutes de départ";
+$lang['text_booknow'] = "Reserve maintenant";
+$lang['text_makepayment'] = "Effectuer le paiement";
+$lang['text_enterallinformation'] = "Vous devez saisir toutes les informations ci-dessous afin de soumettre une transaction";
+$lang['text_customerip'] = "IP du client";
+$lang['text_bookingconditions'] = "Conditions de réservation";
+$lang['text_expirydate'] = "Date d'expiration";
+$lang['text_note'] = "Remarque";
+$lang['text_ssl'] = "SSL";
+$lang['text_chooseyourcountry'] = "Choisis ton pays";
+$lang['text_chargedinUSD'] = "(Facturé en USD)";
+$lang['text_cvvdescription'] = "For your safety and security, we require that you enter your card's verification number. The verification number is a 3-digit number printed on the back of your card. It appears after and to the right of your card number.";
+$lang['text_additionaldocumentsscanned'] = "Documents supplémentaires (numérisés)";
+$lang['text_commaseperatedcontactinfo'] = "coordonnées séparées par des virgules";
+$lang['text_commaseperatedemail'] = "adresse e-mail séparée par des virgules";
+
+
+$lang['text_datatable_next'] = "Suivant";
+$lang['text_datatable_prev'] = "Précédent";
+$lang['text_datatable_sZeroRecords'] = "Aucun enregistrements correspondants trouvés";
+$lang['text_datatable_sInfoEmpty'] = "Affichage de 0 à 0 sur 0 entrées";
+$lang['text_datatable_sInfo'] = "Affichage de _START_ à _END_ entrées sur _TOTAL_";
+$lang['text_datatable_sInfoFiltered'] = "(filtré à partir du total des entrées _MAX_)";
+$lang['text_datatable_sLengthMenu'] = "_MENU_ par page";
+$lang['text_datatable_sSearch'] = "Chercher:";
+
+
+#oct-31-2014
+$lang['text_copy'] = "Copie";
+$lang['text_ratingreview_heading'] = "Évaluation";
+$lang['text_ratingreview'] = "Be a contributor! Write a review and share your experience with others.";
+$lang['text_poweredby'] = "Alimenté par";
+$lang['text_404error'] = "Erreur 404";
+$lang['text_person'] = "La personne";
+$lang['text_people'] = "Gens";
+$lang['text_numberwords_dictionary'] = array(	0                   => 'zero',
+												1                   => 'one',
+												2                   => 'two',
+												3                   => 'three',
+												4                   => 'four',
+												5                   => 'five',
+												6                   => 'six',
+												7                   => 'seven',
+												8                   => 'eight',
+												9                   => 'nine',
+												10                  => 'ten',
+												11                  => 'eleven',
+												12                  => 'twelve',
+												13                  => 'thirteen',
+												14                  => 'fourteen',
+												15                  => 'fifteen',
+												16                  => 'sixteen',
+												17                  => 'seventeen',
+												18                  => 'eighteen',
+												19                  => 'nineteen',
+												20                  => 'twenty',
+												30                  => 'thirty',
+												40                  => 'fourty',
+												50                  => 'fifty',
+												60                  => 'sixty',
+												70                  => 'seventy',
+												80                  => 'eighty',
+												90                  => 'ninety',
+												100                 => 'hundred',
+												1000                => 'thousand',
+												1000000             => 'million',
+												1000000000          => 'billion',
+												1000000000000       => 'trillion',
+												1000000000000000    => 'quadrillion',
+												1000000000000000000 => 'quintillion'
+											);
+
+
+$lang['text_login'] = "S'identifier";
+$lang['text_newuserregisterhere'] = "Nouvel utilisateur Inscrivez-vous ici!";
+$lang['text_loginwithyourimiacnt'] = "Connectez-vous avec votre compte IMI";
+$lang['text_register'] = "S'inscrire";
+$lang['text_registeryouraccount'] = "Enregistrer votre compte";
+$lang['text_thankyou_for_register'] = "Votre inscription à votre compte Mon IMI a été soumise. Veuillez vérifier votre e-mail pour le lien d'activation.  ";
+$lang['text_registeryouraccount_activationlink'] = "Merci d'avoir enregistré votre compte Mon IMI. Veuillez cliquer sur le lien ci-dessous pour activer votre compte.
+Une fois activé, vous pouvez vous connecter à votre profil en utilisant le bouton Connexion en haut à droite du site pour afficher votre profil et vous inscrire ou renouveler votre adhésion IMI dès aujourd'hui!";
+$lang['text_accountdetails'] = "Détails du compte";
+$lang['text_accountregistration/code'] = "Enregistrement de compte / code d'activation";
+$lang['text_donthveimiacnt'] = "Vous n'avez pas de compte?";
+$lang['text_signupnow'] = "S'inscrire maintenant";
+$lang['text_cantaccessyracnt'] = 'Mot de passe oublié?';
+$lang['text_forgotpassword'] = 'Mot de passe oublié';
+$lang['text_dashboard'] = 'Tableau de bord';
+$lang['text_logout'] = 'Se déconnecter';
+$lang['text_logoutsuccessfull'] = 'Déconnexion réussie';
+$lang['text_forgotpassword_thankyou'] = 'Votre mot de passe a été réinitialisé. Veuillez vérifier votre e-mail pour un nouveau mot de passe.';
+$lang['text_credentialsupdated'] = 'Vos identifiants ont été mis à jour. Veuillez vous reconnecter.';
+$lang['text_logoutonceupdatedinfo'] = 'Vous pouvez mettre à jour les informations de votre compte ci-dessous. Vous serez déconnecté une fois que vous aurez mis à jour vos informations.';
+$lang['text_sightseeing'] = 'Vue à vue';
+$lang['text_abstractsubmissionform'] = 'Formulaire de soumission de résumé';
+$lang['text_workshopform'] = "Formulaire d'atelier";
+$lang['text_workshopformsubject'] = "Formulaire d'atelier";
+$lang['text_abstractform_desc'] = 'Toutes les affiches et présentations orales seront en anglais <br /> Veuillez consulter les lignes directrices pour la préparation des affiches sur le site Web de la conférence<br />La liste des affiches et des présentations orales acceptées sera annoncée le <strong>%s </strong>';
+$lang['text_conferenceregistration'] = 'Inscription à la conférence';
+$lang['text_conferenceregistrationpricing'] = "Tarifs d'inscription à la conférence";
+$lang['text_conferencepayment'] = 'Paiement de la conférence';
+$lang['text_abspayment'] = 'Paiement du formulaire de soumission de résumé';
+$lang['text_payment'] = 'Paiement';
+
+
+$lang['text_callback_invalidemail'] = 'Votre adresse e-mail ne figure pas dans nos archives';
+$lang['text_callback_credentialsnotcorrect'] = "Les informations d'identification ne sont pas correctes - Veuillez réessayer";
+$lang['text_callback_activationemailsent'] = "Votre compte n'est pas encore actif. Veuillez d'abord l'activer. <br/> Si vous n'avez pas encore reçu d'e-mail d'activation<a href='".site_url('register/resendActivationLink/'.base64_encode(isset($_POST['email']) ? $_POST['email'] : 'notfound'))."'>cliquez ici</a>";
+$lang['text_callback_accountblocked'] = "Votre compte est actuellement bloqué. Veuillez contacter l'administrateur.";
+$lang['text_email_yourpasswordreset'] = "Votre mot de passe a été réinitialisé. Veuillez noter vos nouvelles informations d'identification. Cliquez ci-dessous pour vous connecter.";
+$lang['text_acceptednotaccepted'] = 'Accepté / Non accepté';
+$lang['text_pdf'] = 'PDF';
+$lang['text_doc'] = 'DOC';
+$lang['text_contactus'] = "Nous contacter";
+$lang['text_contactussubject'] = "Demande de contact";
+$lang['text_alocalparticipant'] = "Un participant local (d'Iran)";
+$lang['text_alocalparticipant_desc'] = "Un participant local en Iran, un site local a été mis en place pour gérer les inscriptions et les paiements dans le pays. Veuillez cliquer ici si vous n'êtes pas redirigé dans quelques secondes.";
+$lang['text_aninternationalparticipant'] = "Un participant international";
+$lang['text_aninternationalparticipant_desc'] = "Votre processus d'inscription comprendra la collecte d'informations et de documentation pour les visas et tous les arrangements liés à la conférence locale. Soyez prêt à fournir cette information à ce moment.";
+$lang['text_plsselectregion'] = 'Veuillez sélectionner votre région';
+$lang['text_areyou?'] = 'Es-tu ?';
+$lang['text_registrationcomplete_desc'] = 'Votre inscription est terminée et payée avec succès.';
+$lang['text_registrationcomplete'] = 'Inscription complète';
+
+$lang['text_saveandproceed'] = 'Enregistrer et continuer';
+$lang['text_proceed'] = 'Procéder';
+$lang['text_youcanalwayspaylater'] = 'Une fois que vous avez soumis, vous pouvez toujours reprendre plus tard.';
+$lang['heading_operation_info']	= "Information";
+$lang['text_home']	= "Accueil";
+$lang['text_pleasecompleteformwithproperinfo']	= "Il y a des erreurs de validation sur le formulaire. Veuillez vérifier et soumettre à nouveau.";
+$lang['text_screen5_planningtostay'] = 'Si vous prévoyez de rester après %s, veuillez remplir le tableau suivant';
+$lang['text_screen5_planningtostay_2'] = "Votre planificateur d'hébergement après %s";
+$lang['text_conferencehighlights'] = 'Faits saillants de la conférence';
+$lang['text_upcomingdeadlines'] = 'Echéances à venir';
+$lang['text_conferenceprogram'] = 'Programme de la conférence';
+$lang['text_programspeakers'] = 'Programme Speakers';
+$lang['text_accomodation'] = 'Logement';
+$lang['text_downloadcompleteprogram'] = 'Télécharger le programme complet et le livre des résumés';
+$lang['text_sightseeing'] = 'Vue à vue';
+$lang['text_viewall'] = 'Voir tout';
+$lang['text_readmore'] = 'Lire la suite';
+$lang['paypal_failed'] = 'Échoué';
+$lang['loginalert_incms'] = 'Veuillez vous connecter afin que nous puissions vous aider à démarrer. <a href="'. site_url("memberlogin") .'">Cliquez ici.</a>';
+
+
+$lang['label_address'] = "Adresse :";
+$lang['label_contact_info'] = "Informations de contact :";
+
+include('emails_lang.php');
+?>

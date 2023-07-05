@@ -1,0 +1,672 @@
+<?php
+$attributes             = array(
+    "name"            => "myForm",
+    "method"        => "post",
+    "enctype"        => "multipart/form-data"
+);
+$unique_form            = array("unique_formid"    => set_value("unique_formid", random_string("unique")));
+
+echo form_open_multipart(site_url(uri_string()), $attributes, $unique_form);
+?>
+
+<div class="bg-info">
+    <blockquote>
+        <p><?php echo lang_line('text_membership_useformbelow_msg1'); ?></p>
+
+        <p><?php echo lang_line('text_membership_useformbelow_msg2'); ?></p>
+
+    </blockquote>
+</div>
+<div class="profileSettings fl_lft w_100">
+    <div class="form_sec fl_lft w_100">
+        <div class="profile-image-uploader-wrap">
+            <div class="profile_image_wrap">
+                <div class="memImg ronded">
+                    <?php if (isset($profile_image) && $profile_image != "") {
+                        echo $this->functions->timthumb($profile_image, 200, 200);
+                    } else {
+                        echo $this->functions->timthumb("assets/frontend/images/no-image.jpg", 200, 200);
+                    } ?>
+                </div>
+                <div class="profile-loader">
+                    <img src="<?php echo site_url("assets/frontend/images/ajax-loader.gif"); ?>" alt="loader" />
+                </div>
+                <i class="icon-camera"></i>
+                <input type="hidden" name="profile-nonce" value="<?php echo $this->encrption->encrypt('profile_nonce') ?>" />
+                <input type="file" name="profile_image" value="" class="profile_image" accept="image/*" />
+            </div>
+            <div class="alert alert-info"><?php echo lang_line('text_max_upload'); ?> 5MB<br /><?php echo lang_line('text_only_allowed'); ?> png, jpg and gif</div>
+        </div>
+    </div>
+</div>
+
+<div class="profileSettings fl_lft w_100">
+
+    <div class="profileForm m_bottom30 fl_lft w_100">
+        <div class="form_sec fl_lft w_100">
+
+            <div class="field_row myLabel w_50 p_right10">
+                <label class=""><?php echo lang_line('label_salutation'); ?> </label>
+                <?php echo form_dropdown('prefix_title', DropdownHelper::salutation_dropdown(), set_value("prefix_title", str_replace('.', '', $prefix_title)), 'class="form-control"'); ?>
+            </div>
+            <div class="field_row myLabel w_50 p_right10">
+                <label class=""><?php echo lang_line('label_cellphonenumber'); ?></label>
+                <?php
+                $TMP_input        = "cellphone_number";
+                $specdata        = array(
+                    "name"                => $TMP_input,
+                    "id"                => $TMP_input,
+                    "class"                => "form-control",
+                    "value"                => set_value($TMP_input, $$TMP_input)
+                );
+
+                echo form_input($specdata);
+                ?>
+            </div>
+            <div class="field_row myLabel w_33 p_right10">
+                <label class=""><?php echo lang_line('label_firstname'); ?> <?php echo required_field("text-danger"); ?></label>
+                <?php
+                $TMP_input        = "first_name";
+                $specdata        = array(
+                    "name"                => $TMP_input,
+                    "id"                => $TMP_input,
+                    "class"                => "form-control",
+                    "value"                => set_value($TMP_input, $$TMP_input)
+                );
+
+                echo form_input($specdata);
+                ?>
+            </div>
+
+            <div class="field_row myLabel w_33 p_right10">
+                <label class=""><?php echo lang_line('label_middlename'); ?></label>
+                <?php
+                $TMP_input        = "middle_name";
+                $specdata        = array(
+                    "name"                => $TMP_input,
+                    "id"                => $TMP_input,
+                    "class"                => "form-control",
+                    "value"                => set_value($TMP_input, $$TMP_input)
+                );
+
+                echo form_input($specdata);
+                ?>
+            </div>
+
+
+            <div class="field_row myLabel w_33 p_right10">
+                <label class=""><?php echo lang_line('label_lastname'); ?> <?php echo required_field("text-danger"); ?></label>
+                <?php
+                $TMP_input        = "last_name";
+                $specdata        = array(
+                    "name"                => $TMP_input,
+                    "id"                => $TMP_input,
+                    "class"                => "form-control",
+                    "value"                => set_value($TMP_input, $$TMP_input)
+                );
+
+                echo form_input($specdata);
+                ?>
+            </div>
+
+            <div class="field_row myLabel w_100 p_right10">
+                <label class=""><?php echo lang_line('label_primary_email'); ?></label>
+                <?php
+                $TMP_input        = "primary_email";
+                $specdata        = array(
+                    "name"                => $TMP_input,
+                    "id"                => $TMP_input,
+                    "class"                => "form-control",
+                    "readonly"            => "readonly",
+                    "value"                => set_value($TMP_input, $$TMP_input)
+                );
+
+                echo form_input($specdata);
+                ?>
+            </div>
+
+
+
+
+            <div class="field_row myLabel w_50 p_right10">
+                <label class=""><?php echo lang_line('label_secondary_email1'); ?></label>
+                <?php
+                $TMP_input        = "secondary_email_1";
+                $specdata        = array(
+                    "name"                => $TMP_input,
+                    "id"                => $TMP_input,
+                    "class"                => "form-control",
+                    "value"                => set_value($TMP_input, $$TMP_input)
+                );
+
+                echo form_input($specdata);
+                ?>
+            </div>
+
+
+            <div class="field_row myLabel w_50 p_right10">
+                <label class=""><?php echo lang_line('label_secondary_email2'); ?></label>
+                <?php
+                $TMP_input        = "secondary_email_2";
+                $specdata        = array(
+                    "name"                => $TMP_input,
+                    "id"                => $TMP_input,
+                    "class"                => "form-control",
+                    "value"                => set_value($TMP_input, $$TMP_input)
+                );
+
+                echo form_input($specdata);
+                ?>
+            </div>
+
+
+
+
+
+
+
+
+
+            <!-- muslimraza:09-06-2017 New Details -->
+            <div class="field_row myLabel w_50 p_right10">
+                <label class=""><?php echo lang_line('label_previoustitlewithimi'); ?></label>
+                <?php
+                $TMP_input        = "previous_title_with_imi";
+                $specdata        = array(
+                    "name"                => $TMP_input,
+                    "id"                => $TMP_input,
+                    "class"                => "form-control",
+                    "value"                => set_value($TMP_input, $$TMP_input)
+                );
+
+                echo form_input($specdata);
+                ?>
+            </div>
+
+            <div class="field_row myLabel w_50 p_right10">
+                <label class=""><?php echo lang_line('label_currentimititle'); ?></label>
+                <?php
+                $TMP_input        = "current_imi_title";
+                $specdata        = array(
+                    "name"                => $TMP_input,
+                    "id"                => $TMP_input,
+                    "class"                => "form-control",
+                    "value"                => set_value($TMP_input, $$TMP_input)
+                );
+
+                echo form_input($specdata);
+                ?>
+            </div>
+
+
+            <div class="field_row myLabel w_50 p_right10">
+                <label class=""><?php echo lang_line('label_gender'); ?></label>
+                <div id="fakeSelectContaier" class="typeOne custom_dropdown">
+                    <span class="fakeSelect"></span>
+                    <?php echo form_dropdown('gender', DropdownHelper::gender_dropdown(), set_value("gender", $gender)) ?>
+                </div>
+            </div>
+
+
+
+            <div class="field_row myLabel w_50 p_right10">
+                <label class=""><?php echo lang_line('label_instituteschool'); ?></label>
+                <?php
+                $TMP_input        = "institute_school";
+                $specdata        = array(
+                    "name"                => $TMP_input,
+                    "id"                => $TMP_input,
+                    "class"                => "form-control",
+                    "value"                => set_value($TMP_input, $$TMP_input)
+                );
+
+                echo form_input($specdata);
+                ?>
+            </div>
+
+
+
+
+
+
+
+
+            <div class="field_row myLabel w_50 p_right10">
+                <label class=""><?php echo lang_line('text_webaddress'); ?></label>
+                <?php
+                $TMP_input        = "web_address";
+                $specdata        = array(
+                    "name"                => $TMP_input,
+                    "id"                => $TMP_input,
+                    "class"                => "form-control",
+                    "value"                => set_value($TMP_input, $$TMP_input)
+                );
+
+                echo form_input($specdata);
+                ?>
+            </div>
+
+            <hr>
+
+            <!-- muslimraza:09-06-2017 New Details -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!---->
+            <div class="fl_lft w_100 flds_group m_top20 m_bottom20">
+                <label class="flds_group_tit"><?php echo lang_line('text_homeaddress'); ?></label>
+                <div class="field_row myLabel w_100">
+                    <label class=""><?php echo lang_line('label_fulladdress'); ?></label>
+                    <?php
+                    $TMP_input        = "home_full_address";
+                    $specdata        = array(
+                        "name"                => $TMP_input,
+                        "id"                => $TMP_input,
+                        "class"                => "form-control",
+                        "value"                => set_value($TMP_input, $$TMP_input)
+                    );
+
+                    echo form_textarea($specdata);
+                    ?>
+                </div>
+
+
+
+                <div class="field_row myLabel w_50 p_right10">
+                    <label class=""><?php echo lang_line('label_country'); ?></label>
+                    <div id="fakeSelectContaier" class="typeOne custom_dropdown">
+                        <span class="fakeSelect"></span>
+                        <?php echo form_dropdown('home_country', DropdownHelper::country_dropdown(), set_value("home_country", $home_country)) ?>
+                    </div>
+                </div>
+
+
+
+
+                <div class="field_row myLabel w_50">
+                    <label class=""><?php echo lang_line('label_stateprovince'); ?></label>
+                    <?php
+                    $TMP_input        = "home_state_province";
+                    $specdata        = array(
+                        "name"                => $TMP_input,
+                        "id"                => $TMP_input,
+                        "class"                => "form-control",
+                        "value"                => set_value($TMP_input, $$TMP_input)
+                    );
+
+                    echo form_input($specdata);
+                    ?>
+                </div>
+
+
+                <div class="field_row myLabel w_50 p_right10">
+                    <label class=""><?php echo lang_line('label_city'); ?></label>
+                    <?php
+                    $TMP_input        = "home_city";
+                    $specdata        = array(
+                        "name"                => $TMP_input,
+                        "id"                => $TMP_input,
+                        "class"                => "form-control",
+                        "value"                => set_value($TMP_input, $$TMP_input)
+                    );
+
+                    echo form_input($specdata);
+                    ?>
+                </div>
+
+
+                <div class="field_row myLabel w_50">
+                    <label class=""><?php echo lang_line('label_phoneno'); ?></label>
+                    <?php
+                    $TMP_input        = "home_phone_number";
+                    $specdata        = array(
+                        "name"                => $TMP_input,
+                        "id"                => $TMP_input,
+                        "class"                => "form-control",
+                        "value"                => set_value($TMP_input, $$TMP_input)
+                    );
+
+                    echo form_input($specdata);
+                    ?>
+                </div>
+
+                <div class="field_row myLabel w_50">
+                    <label class=""><?php echo lang_line('label_zippostalcode'); ?></label>
+                    <?php
+                    $TMP_input        = "home_zipcode";
+                    $specdata        = array(
+                        "name"                => $TMP_input,
+                        "id"                => $TMP_input,
+                        "class"                => "form-control",
+                        "value"                => set_value($TMP_input, $$TMP_input)
+                    );
+
+                    echo form_input($specdata);
+                    ?>
+                </div>
+            </div>
+
+
+            <!---->
+            <!---->
+            <div class="fl_lft w_100 flds_group m_top20 m_bottom20">
+                <label class="flds_group_tit"><?php echo lang_line('text_office_address'); ?></label>
+                <div class="field_row myLabel w_100">
+                    <label class=""><?php echo lang_line('label_fulladdress'); ?></label>
+                    <?php
+                    $TMP_input        = "office_full_address";
+                    $specdata        = array(
+                        "name"                => $TMP_input,
+                        "id"                => $TMP_input,
+                        "class"                => "form-control",
+                        "value"                => set_value($TMP_input, $$TMP_input)
+                    );
+
+                    echo form_textarea($specdata);
+                    ?>
+                </div>
+
+                <div class="field_row myLabel w_50 p_right10">
+                    <label class=""><?php echo lang_line('label_country'); ?></label>
+                    <div id="fakeSelectContaier" class="typeOne custom_dropdown">
+                        <span class="fakeSelect"></span>
+                        <?php echo form_dropdown('office_country', DropdownHelper::country_dropdown(), set_value("office_country", $office_country)) ?>
+                    </div>
+                </div>
+
+
+
+
+                <div class="field_row myLabel w_50">
+                    <label class=""><?php echo lang_line('label_stateprovince'); ?></label>
+                    <?php
+                    $TMP_input        = "office_state_province";
+                    $specdata        = array(
+                        "name"                => $TMP_input,
+                        "id"                => $TMP_input,
+                        "class"                => "form-control",
+                        "value"                => set_value($TMP_input, $$TMP_input)
+                    );
+
+                    echo form_input($specdata);
+                    ?>
+                </div>
+
+
+                <div class="field_row myLabel w_50 p_right10">
+                    <label class=""><?php echo lang_line('label_city'); ?></label>
+                    <?php
+                    $TMP_input        = "office_city";
+                    $specdata        = array(
+                        "name"                => $TMP_input,
+                        "id"                => $TMP_input,
+                        "class"                => "form-control",
+                        "value"                => set_value($TMP_input, $$TMP_input)
+                    );
+
+                    echo form_input($specdata);
+                    ?>
+                </div>
+
+
+                <div class="field_row myLabel w_50">
+                    <label class=""><?php echo lang_line('label_phoneno'); ?></label>
+                    <?php
+                    $TMP_input        = "office_phone_number";
+                    $specdata        = array(
+                        "name"                => $TMP_input,
+                        "id"                => $TMP_input,
+                        "class"                => "form-control",
+                        "value"                => set_value($TMP_input, $$TMP_input)
+                    );
+
+                    echo form_input($specdata);
+                    ?>
+                </div>
+
+                <div class="field_row myLabel w_50">
+                    <label class=""><?php echo lang_line('label_zippostalcode'); ?></label>
+                    <?php
+                    $TMP_input        = "office_zip_code";
+                    $specdata        = array(
+                        "name"                => $TMP_input,
+                        "id"                => $TMP_input,
+                        "class"                => "form-control",
+                        "value"                => set_value($TMP_input, $$TMP_input)
+                    );
+
+                    echo form_input($specdata);
+                    ?>
+                </div>
+            </div>
+            <!---->
+
+            <div class="field_row myLabel w_50 p_right10">
+                <label class=""><?php echo lang_line('label_occupation'); ?></label>
+                <?php
+                $TMP_input        = "occupation";
+                $specdata        = array(
+                    "name"                => $TMP_input,
+                    "id"                => $TMP_input,
+                    "class"                => "form-control",
+                    "value"                => set_value($TMP_input, $$TMP_input)
+                );
+
+                echo form_input($specdata);
+                ?>
+            </div>
+
+            <div class="field_row myLabel w_50 p_right10">
+                <label class=""><?php echo lang_line('label_specialities'); ?></label>
+                <?php
+                $TMP_input        = "specialties";
+                $specdata        = array(
+                    "name"                => $TMP_input,
+                    "id"                => $TMP_input,
+                    "class"                => "form-control",
+                    "value"                => set_value($TMP_input, $$TMP_input)
+                );
+
+                echo form_input($specdata);
+                ?>
+            </div>
+
+            <!--
+            <div class="field_row myLabel w_50 p_right10">
+                <label class="">Occupation :</label>
+                	<?php
+                    /*
+					$TMP_input		= "office_phone_number";
+					$specdata		= array("name"				=> $TMP_input,
+											"id"				=> $TMP_input,										
+											"class"				=> "form-control",
+											"value"				=> set_value($TMP_input, $$TMP_input) );
+					
+					echo form_input($specdata);
+					*/
+                    ?>
+                    
+                <div id="fakeSelectContaier" class="typeOne custom_dropdown">
+                <span class="fakeSelect"></span>
+                <select>
+                    <option>Lorem</option>
+                    <option selected="selected">Ipsum</option>
+                    <option>Dollar</option>
+                    <option>Sit</option>
+                    <option>Ammet</option>
+                </select>
+                </div>
+            </div>
+            
+            <div class="field_row myLabel w_50 p_right10">
+            	<label class="">Specialities :</label>
+                <div id="fakeSelectContaier" class="typeOne custom_dropdown">
+                <span class="fakeSelect"></span>
+                <select>
+                    <option>Lorem</option>
+                    <option>Ipsum</option>
+                    <option>Dollar</option>
+                    <option>Sit</option>
+                    <option>Ammet</option>
+                </select>
+                </div>
+            </div>
+            -->
+
+            <hr />
+            <div class="field_row myLabel radiobuttons w_100">
+                <label class="fl_lft"><?php echo lang_line('label_preferredaddress'); ?></label>
+                <p class="fl_lft">
+
+                    <input type="radio" name="prefered_mode_address" class="<?php echo set_class("prefered_mode_address"); ?>" value="Personal" <?php echo set_radio("prefered_mode_address", "Personal", format_bool(set_value("prefered_mode_address", $prefered_mode_address), "Personal")); ?> />
+
+                    <label><?php echo lang_line('text_homepersonal'); ?></label>
+                </p>
+                <p class="fl_lft">
+
+                    <input type="radio" name="prefered_mode_address" class="<?php echo set_class("prefered_mode_address"); ?>" value="Work" <?php echo set_radio("prefered_mode_address", "Work", format_bool(set_value("prefered_mode_address", $prefered_mode_address), "Work")); ?> />
+
+                    <label><?php echo lang_line('text_officework'); ?></label>
+                </p>
+            </div>
+
+
+
+            <div class="field_row myLabel radiobuttons w_100">
+                <label class="fl_lft"><?php echo lang_line('label_preferredphone'); ?></label>
+                <p class="fl_lft">
+
+                    <input type="radio" name="preffered_mode_of_contact" class="<?php echo set_class("preffered_mode_of_contact"); ?>" value="Home" <?php echo set_radio("preffered_mode_of_contact", "Home", format_bool(set_value("preffered_mode_of_contact", $preffered_mode_of_contact), "Home")); ?> />
+
+                    <label><?php echo lang_line('text_home'); ?></label>
+                </p>
+                <p class="fl_lft">
+
+                    <input type="radio" name="preffered_mode_of_contact" class="<?php echo set_class("preffered_mode_of_contact"); ?>" value="Mobile" <?php echo set_radio("preffered_mode_of_contact", "Mobile", format_bool(set_value("preffered_mode_of_contact", $preffered_mode_of_contact), "Mobile")); ?> />
+
+                    <label><?php echo lang_line('text_mobile'); ?></label>
+                </p>
+                <p class="fl_lft">
+
+                    <input type="radio" name="preffered_mode_of_contact" class="<?php echo set_class("preffered_mode_of_contact"); ?>" value="Work" <?php echo set_radio("preffered_mode_of_contact", "Work", format_bool(set_value("preffered_mode_of_contact", $preffered_mode_of_contact), "Work")); ?> />
+
+                    <label><?php echo lang_line('text_work'); ?></label>
+                </p>
+            </div>
+
+
+            <div class="field_row myLabel radiobuttons w_100">
+                <label class="fl_lft"><?php echo lang_line('label_preferredemail'); ?></label>
+                <p class="fl_lft">
+
+                    <input type="radio" name="preffered_mode_of_email" class="<?php echo set_class("preffered_mode_of_email"); ?>" value="Personal" <?php echo set_radio("preffered_mode_of_email", "Personal", format_bool(set_value("preffered_mode_of_email", $preffered_mode_of_email), "Personal")); ?> />
+
+                    <label><?php echo lang_line('text_homepersonal'); ?></label>
+                </p>
+                <p class="fl_lft">
+
+                    <input type="radio" name="preffered_mode_of_email" class="<?php echo set_class("preffered_mode_of_email"); ?>" value="Work" <?php echo set_radio("preffered_mode_of_email", "Work", format_bool(set_value("preffered_mode_of_email", $preffered_mode_of_email), "Work")); ?> />
+
+                    <label><?php echo lang_line('text_officework'); ?></label>
+                </p>
+            </div>
+
+
+            <hr />
+
+
+
+
+            <div class="field_row myLabel w_50 p_right10">
+                <label class=""><?php echo lang_line('label_existingpassword'); ?></label>
+                <?php
+                $TMP_input        = "existing_password";
+                $specdata        = array(
+                    "name"                => $TMP_input,
+                    "id"                => $TMP_input,
+                    "type"                => "password",
+                    "class"                => "form-control",
+                    "value"                => set_value($TMP_input)
+                );
+
+                echo form_input($specdata);
+                ?>
+            </div>
+
+
+            <div class="field_row myLabel w_50 p_right10">
+                <label class=""><?php echo lang_line('label_newpassword'); ?></label>
+                <?php
+                $TMP_input        = "new_password";
+                $specdata        = array(
+                    "name"                => $TMP_input,
+                    "id"                => $TMP_input,
+                    "type"                => "password",
+                    "class"                => "form-control",
+                    "value"                => set_value($TMP_input)
+                );
+
+                echo form_input($specdata);
+                ?>
+            </div>
+
+
+            <?php /* <div class="field_row myLabel w_100 checkbox">
+            	<input type="checkbox" name="other_member_can_see_profile" id="other_member_can_see_profile" 
+                class="<?php echo set_class("other_member_can_see_profile");?>" value="1"
+            <?php echo set_checkbox("other_member_can_see_profile", "1", format_bool( set_value("other_member_can_see_profile", $other_member_can_see_profile), "1"));?> />
+
+            <label for="other_member_can_see_profile">Other Member can see my Information.</label>
+        </div> */ ?>
+
+        <div class="fl_lft w_100 memProLink">
+            <a class="blue_btn1 big fontFam_aleoReg m_top20" href="javascript:;" onclick="$('input[name=submit]').click()">
+            <?php echo lang_line('text_updateprofileinfo'); ?>
+            </a>
+
+            <input type="submit" name="submit" style="display:none;" />
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+
+
+<input type="hidden" name="id" value="<?php echo set_value('id', $id); ?>" />
+<input type="hidden" name="options" value="<?php echo set_value('options', $options); ?>" />
+
+</form>
+
+<script type="text/javascript">
+    jQuery(document).on('click', '.profile_image_wrap .icon-camera', function() {
+        jQuery('input[name="profile_image"]').click();
+    });
+</script>

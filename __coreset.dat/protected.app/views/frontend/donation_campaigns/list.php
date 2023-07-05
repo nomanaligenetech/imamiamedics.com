@@ -1,0 +1,90 @@
+<div class="donation-campaigns-list w_100 fl_lft ">
+
+	<h1><?php echo $_pagetitle; ?></h1>
+
+	<div id="campaigns-list" class="hidden">
+
+	</div>
+
+	<div class="text-center">
+		<img style="display: none; height: 136px" data-val="0" id="loader" src="<?php echo str_replace('index.php', '', base_url()) ?>assets/frontend/images/loader-img.gif">
+	</div>
+
+</div>
+
+
+<script>
+
+	$(document).ready(function() {
+		var validating = false;
+		getCampaigns(0);
+	});
+
+	//$(window).scroll(function() {
+		function onScrollFunc(){
+			if(validating) return false;
+			console.log('test');
+			if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+				var page = $('#loader').data('val');
+				getCampaigns(page);
+			}
+		}
+		window.addEventListener('scroll', onScrollFunc, false );
+	//});
+
+	// Donors Ajax call function
+	var getCampaigns = function(page) {
+		$("#loader").show();
+		validating = true;
+		$.ajax({
+			url: "<?php echo base_url() ?>page/donation-campaigns/getCampaigns",
+			type: 'GET',
+			data: {
+				page: page
+			}
+		}).done(function(response) {
+			if (response && response.length) {
+				$("#campaigns-list").removeClass('hidden');
+				var campaignList = '';
+				JSON.parse(response).forEach(campaign => {
+					campaignList += generateCampaign(campaign);
+				});
+				$("#campaigns-list").append(campaignList);
+				$('#loader').data('val', ($('#loader').data('val') + 1));
+			} else {
+				window.removeEventListener('scroll', onScrollFunc, false);
+			}
+			validating = false;
+			$("#loader").hide();
+		});
+	};
+
+
+	function generateCampaign(campaign) {
+		var current_url = '<?php echo current_url(); ?>';
+		var percent = (parseFloat(campaign.donation_amount.replace(/,/g, '')) / parseFloat(campaign.goal_amount.replace(/,/g, ''))) * 100;
+		var item = '';
+		item += '<div class="left_area fl_lft m_bottom25 ">';
+		item += '<div class="left_area_bottom  fl_lft">';
+		item += '<div class="testi_wrap">';
+		item += '<div class="col-md-5"><img src="' + campaign.featured_image + '" style="width: 100%" alt=""></div>';
+		item += '<div class="col-md-7">';
+		item += '<h2><a href="' + current_url + '/' + campaign.slug + '">' + campaign.name + '</a></h2>';
+		item += '<p>' + campaign.short_desc + '</p>';
+		item += '<div class="campaigns-flex"><div class="col-sm-4 cost-div">';
+		item += '<span><?php echo lang_line("heading_goal"); ?>: $' + campaign.goal_amount + '</span>';
+		item += '</div>';
+		item += '<div class="col-sm-8 progress-div">';
+		item += '<span><?php echo lang_line("heading_raised"); ?>:  $' + (campaign.donation_amount != undefined ? campaign.donation_amount : 0) + '</span>';
+		item += '<div class="progress">';
+		item += '<div class="progress-bar bg-success" role="progressbar" style="width: ' + percent + '%" aria-valuenow="' + percent + '" aria-valuemin="0" aria-valuemax="100"></div>';
+		item += '</div>';
+		item += '</div>';
+		item += '</div>';
+		item += '</div>';
+		item += '</div>';
+		item += '</div>';
+		item += '</div>';
+		return item;
+	}
+</script>

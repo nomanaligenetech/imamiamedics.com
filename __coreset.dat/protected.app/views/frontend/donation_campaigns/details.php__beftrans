@@ -1,0 +1,300 @@
+<div class="donation-campaigns-details">
+<?php $campaign = $campaigns_list[0]; ?>
+
+
+
+<div class="left_area fl_lft m_bottom25 col-md-8 donation-campaigns-full">
+
+    <h1><?php echo $campaign['project_name']; ?></h1>
+
+
+    <img src="<?php echo $campaign['featured_image']; ?>" class="img-responsive" alt="">
+
+    <p><?php echo $campaign['content']; ?></p>
+
+
+    <?php if (!empty($campaign['campaign_gallery'])) : ?>
+        <h2>Image Gallery</h2>
+
+        <div class="row">
+            <div id="events_slider" style="width:100%;float:left;">
+                <?php
+                    foreach ($campaign['campaign_gallery'] as $key => $image) { ?>
+
+                    <li>
+                        <a href="javascript:;">
+
+                            <img src="<?php echo $this->functions->timthumb($image['gallery_image'], 830, 480, FALSE, FALSE); ?>" alt="javascript slider" title="event_img_" .<?php echo $key; ?> />
+
+                        </a>
+                    </li>
+
+                <?php }
+                    ?>
+            </div>
+            <div id="events_slider_nav" style="width:100%;float:left;">
+                <?php
+                    $img            = array();
+                    $a              = 0;
+
+                    foreach ($campaign['campaign_gallery'] as $si) {
+                        $img[$a]['src']             = $this->functions->timthumb($si['gallery_image'], $IMAGES_details['size']['width'], $IMAGES_details['size']['height'], FALSE, FALSE);
+                        ?>
+                    <a href="javascript:;">
+                        <img src="<?php echo $this->functions->timthumb($si['gallery_image'], $IMAGES_details['thumb_size']['width'], $IMAGES_details['thumb_size']['height'], FALSE, FALSE); ?>" alt="" />
+                    </a>
+                <?php
+                        $a++;
+                    }
+
+                    ?>
+            </div>
+
+        </div>
+    <?php endif; ?>
+
+    <div class="row">
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#updates-block">Updates</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="updates-block" class="tab-pane fade in active">
+                <ul class="list-group" id="updates">
+
+                </ul>
+
+                <div class="text-center">
+                    <button class="btn bg-warning" id="updates_load_more" data-val="0" data-campaign_id="<?php echo $campaign['id']; ?>">View more Updates <img style="display: none; height: 25px" id="updates_loader" src="<?php echo str_replace('index.php', '', base_url()) ?>assets/frontend/images/ajax-loader.gif"> </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- <div id="feedback-block" class="hidden">
+        <h2>Feedback From Donors</h2>
+
+
+    </div> -->
+
+</div>
+
+
+
+<div class="left_area col-md-4 right-padding">
+<div class="donation-campaigns-box">
+    <h2> <span class="broder">Goal</span><span class="broder-content"> $<?php echo $campaign['goal_amount']; ?></span></h2>
+<div class="inner-content">
+
+<?php $percent = (filter_var($campaign['donation_amount'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION) / filter_var($campaign['goal_amount'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION)) * 100; ?>
+
+    <div class="progress">
+        <div class="progress-bar bg-success" role="progressbar" style="width: <?php echo $percent; ?>%" aria-valuenow="<?php echo $percent; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <h4><strong>Raised:</strong> $<?php echo !is_null($campaign['donation_amount']) ? $campaign['donation_amount'] : "0"; ?></h4>
+
+    <div class="fl_lft sec1_2 schl-btn-wrp">
+
+        <a href="<?php echo site_url(); ?>page/donate?donation_campaign=<?php echo $campaign['donation_project_id']; ?>" class="donate_btn">
+            <img src="<?php echo base_url("assets/frontend/images/donate_btn_orange.png"); ?>" alt="donate" />
+            <span class="sp1"></span>
+            <span class="sp2"></span>
+        </a>
+    </div>
+    <div class="fl_lft sec1_2 schl-icon">
+        Share This Cause
+        <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            <a class="a2a_button_facebook"></a>
+            <a class="a2a_button_twitter"></a>
+            <a class="a2a_button_linkedin"></a>
+            <a class="a2a_button_pinterest"></a>
+        </div>
+    </div>
+                </div>
+                </div>
+<?php if(!is_null($campaign['sidebar'])){?>
+    <div class="fl_lft sec1_3 sidebar-box">
+        <?php echo $campaign['sidebar']; ?>
+    </div>
+<?php } ?>
+</div>
+</div>
+<!-- <div class="left_area col-md-4">
+
+    <div id="donors-block" class="hidden">
+        <h4>Donors</h4>
+
+
+    </div>
+
+</div> -->
+
+
+<script async src="https://static.addtoany.com/menu/page.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/css/flag-icon.min.css" integrity="sha256-YjcCvXkdRVOucibC9I4mBS41lXPrWfqY2BnpskhZPnw=" crossorigin="anonymous" />
+
+<script>
+    project_id = '<?php echo $campaign['donation_project_id']; ?>';
+    campaign_id = '<?php echo $campaign['id']; ?>';
+
+    $(document).ready(function() {
+        getUpdates(0, campaign_id);
+
+        var link = $('.strip-wrap a.donation-button');
+        link.attr('href', link.attr('href') + '?donation_campaign=<?php echo $campaign['donation_project_id']; ?>');
+
+        $("#updates_load_more").click(function(e) {
+            e.preventDefault();
+            var page = $(this).data('val');
+            var campaign_id = $(this).data('campaign_id');
+            getUpdates(page, campaign_id);
+        });
+
+    });
+
+    // Feedback Ajax call function
+    var getUpdates = function(page, campaign_id) {
+        $("#updates_loader").show();
+        $.ajax({
+            url: "<?php echo base_url() ?>page/donation-campaigns/getUpdates",
+            type: 'GET',
+            data: {
+                page: page,
+                campaign_id: campaign_id
+            }
+        }).done(function(response) {
+            if (response && response.length) {
+                // $("#feedback-block").removeClass('hidden');
+                var itemsList = '';
+                JSON.parse(response).forEach(item => {
+                    itemsList += '<li class="list-group-item">';
+                    itemsList += '<p class="list-group-item-text">' + item.description + '</p>';
+                    itemsList += '<p class="list-group-item-text">' + new Date(item.date.replace(/-/g, "/")).toShortFormat() + '</p>';
+                    itemsList += '</li>';
+                });
+                $("#updates").append(itemsList);
+                $('#updates_load_more').data('val', ($('#updates_load_more').data('val') + 1));
+            }else{
+                $('#updates_load_more').hide();
+            }
+            $("#updates_loader").hide();
+            // scroll();
+        });
+    };
+
+    // var scroll = function() {
+    //     $('html, body').animate({
+    //         scrollTop: $('#donors_load_more').offset().top
+    //     }, 1000);
+    // };
+
+
+    Date.prototype.toShortFormat = function() {
+
+        var month_names = ["Jan", "Feb", "Mar",
+            "Apr", "May", "Jun",
+            "Jul", "Aug", "Sep",
+            "Oct", "Nov", "Dec"
+        ];
+
+        var day = this.getDate();
+        var month_index = this.getMonth();
+        var year = this.getFullYear();
+
+        return "" + day + "-" + month_names[month_index] + "-" + year;
+    }
+
+    function timeSince(date) {
+
+        var seconds = Math.floor((new Date() - date) / 1000);
+
+        var interval = Math.floor(seconds / 31536000);
+
+        if (interval > 1) {
+            return interval + " years ago";
+        }
+        interval = Math.floor(seconds / 2592000);
+        if (interval > 1) {
+            return interval + " months ago";
+        }
+        interval = Math.floor(seconds / 86400);
+        if (interval > 1) {
+            return interval + " days ago";
+        }
+        interval = Math.floor(seconds / 3600);
+        if (interval > 1) {
+            return interval + " hours ago";
+        }
+        interval = Math.floor(seconds / 60);
+        if (interval > 1) {
+            return interval + " minutes ago";
+        }
+        return Math.floor(seconds) + " seconds ago";
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    .slick-prev {
+        left: 10px !important;
+        z-index: 99999;
+    }
+
+    .slick-next {
+        right: 10px !important;
+        z-index: 99999;
+    }
+
+    .slick-frame {
+        visibility: hidden;
+    }
+
+    .slick-frame.slick-initialized {
+        visibility: visible;
+    }
+
+    #events_slider_nav .slick-current {
+        border-bottom: 2px solid #f00;
+        outline: none !important;
+    }
+
+    #events_slider_nav .slick-slide:focus {
+        border-bottom: 2px solid #0070b0;
+        outline: none !important;
+    }
+
+    /*#events_slider_nav .slick-track {*/
+        /*transform: initial !important*/
+    /*}*/
+</style>
+
+
+
+<link rel="stylesheet" type="text/css" href="<?php echo FOLDER_WIDGETS . 'slick-1.8.0/slick/slick.css' ?>" />
+<!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="<?php echo FOLDER_WIDGETS . 'slick-1.8.0/slick/slick-theme.css' ?>" />
+
+<script type="text/javascript" src="<?php echo FOLDER_WIDGETS . 'slick-1.8.0/slick/slick.js' ?>"></script>
+
+<script type="text/javascript">
+    $('#events_slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        infinite: false,
+        asNavFor: '#events_slider_nav'
+    });
+    $('#events_slider_nav').slick({
+        slidesToShow: 8,
+        slidesToScroll: 1,
+        asNavFor: '#events_slider',
+        dots: false,
+        centerMode: false,
+        focusOnSelect: true
+    });
+</script>

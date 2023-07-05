@@ -1,0 +1,347 @@
+@charset "utf-8";
+/* CSS Document */
+
+.m_rite5 {
+    margin-right: 5px
+}
+
+.m_rite10 {
+    margin-right: 10px
+}
+
+.m_rite15 {
+    margin-right: 15px
+}
+
+.m_rite20 {
+    margin-right: 20px
+}
+
+.m_rite25 {
+    margin-right: 25px
+}
+
+.m_left5 {
+    margin-left: 5px
+}
+
+.m_left10 {
+    margin-left: 10px
+}
+
+.m_left15 {
+    margin-left: 15px
+}
+
+.m_left20 {
+    margin-left: 20px
+}
+
+.m_left25 {
+    margin-left: 25px
+}
+
+.m_top5 {
+    margin-top: 5px
+}
+
+.m_top10 {
+    margin-top: 10px
+}
+
+.m_top15 {
+    margin-top: 15px
+}
+
+.m_top20 {
+    margin-top: 20px
+}
+
+.m_top25 {
+    margin-top: 25px
+}
+
+.m_top50 {
+    margin-top: 50px
+}
+
+.m_bottom5 {
+    margin-bottom: 5px
+}
+
+.m_bottom10 {
+    margin-bottom: 10px
+}
+
+.m_bottom15 {
+    margin-bottom: 15px
+}
+
+.m_bottom20 {
+    margin-bottom: 20px
+}
+
+.m_bottom25 {
+    margin-bottom: 25px
+}
+
+.m_bottom30 {
+    margin-bottom: 30px
+}
+
+.m_bottom50 {
+    margin-bottom: 50px
+}
+
+.p_Top25 {
+    padding-top: 25px;
+}
+
+.p_Bottom25 {
+    padding-bottom: 25px;
+}
+
+.p_Top30 {
+    padding-top: 30px;
+}
+
+.p_Bottom30 {
+    padding-bottom: 30px;
+}
+
+.p_TopBottom30 {
+    padding: 30px 0;
+}
+
+.p_right10 {
+    padding-right: 10px;
+}
+
+.p_left10 {
+    padding-left: 10px;
+}
+
+.w_10 {
+    width: 10%;
+}
+
+.w_20 {
+    width: 20%;
+}
+
+.w_28 {
+    width: 28%;
+}
+
+.w_30 {
+    width: 30%;
+}
+
+.w_31_half {
+    width: 31.5%;
+}
+
+.w_33 {
+    width: 33% !important;
+}
+
+.w_40 {
+    width: 40%;
+}
+
+.w_45 {
+    width: 45%;
+}
+
+.w_49 {
+    width: 49%;
+}
+
+.w_50 {
+    width: 50%;
+}
+
+.w_55 {
+    width: 55%;
+}
+
+.w_60 {
+    width: 60%;
+}
+
+.w_65 {
+    width: 65%;
+}
+
+.w_68 {
+    width: 68%;
+}
+
+.w_70 {
+    width: 70%;
+}
+
+.w_80 {
+    width: 80%;
+}
+
+.w_90 {
+    width: 90%;
+}
+
+.w_100 {
+    width: 100%;
+}
+
+.right-side .content{
+    min-height: 700px;
+}
+
+.error,.required{
+    color: red;
+}
+
+.crud_controls{ margin-top:30px;}
+.table_form tr:first-child td{ border-top:none !important;}
+.fieldKey{ width:30%;}
+.fieldValue{ width:70%;}
+.table_form td{ vertical-align:middle !important;}
+.clear_border_bottom > td{ border-top:none !important;}
+.columndelete span{ display:none;}
+.columndelete_3 span{ display:block !important;}
+.add_menus_boxes.box_0 span.bg-light-blue{ visibility:hidden;}
+
+.text_before_div{ float: left; margin-top: 8px; margin-right:10px;}
+.text_after_div{ float: left; margin-top: 8px; margin-left:10px;}
+
+.floatleft{ float:left;}
+.input-group-addon{ width:auto !important; }
+
+.input-group select{ width:358px !important; } 
+
+.fa-angle-double-right{ width:10px !important;}
+.sidebar .sidebar-menu .treeview-menu > li > a{ font-size:12px !important;}
+.validation_special{ color:teal; }
+.required_field{ color:red; font-weight:bold;}
+.input-error-class{ border: 1px solid #ff0000 !important;    background-color: #ffeeee !important; }
+
+.ilinks_sortable li {cursor: move;}
+
+
+.rempadding{ padding:0 !important;}
+.remmargin{ margin:0 !important;}
+.mL10{ margin-left:10px !important;}
+.width100perc{ width:100% !important;}
+.display-block{ display:block !important;}
+
+body > .header .logo, .innerpage-content > .header .logo{font-size: 16px;}
+
+
+.profile_image_wrap {
+    position: relative;
+    width: 100%;
+    font-size: 1.2em;
+}
+
+.profile_image_wrap .memImg.ronded {
+    width: 40%;
+}
+
+.profile_image_wrap .memImg.ronded img {
+    border: 2px solid #ccc;
+    border-radius: 100%;
+}
+
+.profile_image_wrap .profile_image_lbl {
+    width: 70%;
+    position: absolute;
+    height: 50px;
+    line-height: 50px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto !important;
+    text-align: center;
+    background: #009bdc;
+    border-radius: 30px;
+    color: #fff !important;
+    font-weight: normal;
+}
+
+.profile_image_wrap .profile_image {
+    border: none !important;
+    padding: 0 !important;
+    width: 70% !important;
+    position: absolute;
+    height: 50px !important;
+    line-height: 50px !important;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    background: #ccc;
+    border-radius: 20px !important;
+    cursor: pointer;
+    opacity: 0;
+}
+
+table.family_relationships input, table.family_relationships select{
+    border: 0;
+    outline: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
+
+table.family_relationships .add input,
+table.family_relationships .add select {
+    border: 1px solid #ccc;
+}
+
+table.family_relationships input[disabled], table.family_relationships select[disabled]{
+    color: #000;
+    background: transparent;
+    width: 100%;
+}
+
+table.family_relationships .family-editing input, table.family_relationships .family-editing select {
+    border: 1px solid #b9b9b9;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.arbaeen-medical-mission-table-view tr.reject td {
+    background: #ffdbdb !important;
+}
+
+.arbaeen-medical-mission-table-view tr.approve td {
+    background: #e1ffdb !important;
+}
+
+.btn{
+    margin: 2px;
+}
+
+.countries-list .selectize-control{
+    line-height: normal;
+}
+
+.countries-list .selectize-input {
+    border: none;
+    padding: 0;
+}
+
+.countries-list .selectize-dropdown {
+    top: 30px !important;
+    left: -13px !important;
+}
+
+.countries-list .selectize-dropdown [data-selectable],
+.countries-list .selectize-dropdown .optgroup-header {
+    padding: 10px 8px;
+}
+
+.form-control .selectize-input{
+    border: none !important;
+}

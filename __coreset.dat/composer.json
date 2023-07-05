@@ -1,0 +1,8 @@
+{
+  "minimum-stability": "dev",
+  "prefer-stable" : true,
+  "require": {
+    "apih/paypal-ipn-pdt": "dev-master",
+    "nicmart/string-template": "^0.1.1"
+  }
+}

@@ -1,0 +1,114 @@
+<?php
+$lang['heading_whatwedo'] = "What We Do";
+$lang['heading_impacting_millions'] = "Impacting Millions Globally";
+$lang['heading_our_story'] = "Our Story";
+$lang['heading_get_involved'] = "Get Involved";
+
+$lang['heading_board_regents'] = "Board of Regents";
+$lang['heading_image_gallery'] = "Image Gallery";
+$lang['heading_video_gallery'] = "Video Gallery";
+$lang['heading_feedback'] = "Feedback";
+$lang['heading_donors'] = "Donors";
+$lang['heading_updates'] = "Updates";
+
+$lang['heading_banner_savealife'] = "Save a life, save humanity";
+$lang['heading_banner_keepingalive'] = "keeping individuals and opportunity alive";
+
+
+$lang['button_login'] = "Login";
+$lang['button_register'] = "Register";
+$lang['button_forgot_your_password'] = "Forgot your password?";
+$lang['button_forgot_password'] = "Forgot Password";
+$lang['button_donthave_account'] = "Don't have an account?";
+$lang['button_click_here'] = "Click Here";
+$lang['button_signup_now'] = "Sign Up Now";
+$lang['button_submit'] = "Submit";
+
+$lang['button_view_more_feedback'] = "View more feedback";
+$lang['button_view_more_donors'] = "View more Donors";
+$lang['button_view_more_updates'] = "View more Updates";
+$lang['button_view_details'] = "View Details";
+$lang['button_joinnow'] = "Join Now";
+$lang['button_supportus'] = "Support Us";
+$lang['button_donate'] = "Donate";
+$lang['button_preview'] = "Preview";
+$lang['button_send'] = "Send";
+$lang['button_donatenow'] = "Donate Now";
+$lang['button_getinvolved'] = "Get Involved";
+
+$lang['heading_goal'] = "Goal";
+$lang['heading_raised'] = "Raised";
+$lang['heading_share_this_cause'] = "Share This Cause";
+
+// Donate page
+$lang['heading_give_now'] = "Give Now";
+$lang['heading_give_someone'] = "Give In Honor of Someone";
+$lang['heading_ways_to_give'] = "Other Ways to Give";
+
+
+$lang['label_select_project'] = "Select project to donate";
+$lang['label_amount_to_donate'] = "Amount to donate";
+$lang['label_marjaa_taqleed'] = "Marjaa e Taqleed";
+$lang['label_one_or_recurring'] = "Do you want to pay one time or recurring";
+$lang['label_donation_frequency'] = "Donation Frequency";
+$lang['label_employer_match'] = "Would you like your employer to match?";
+$lang['label_not_in_list'] = "Not In List ?";
+$lang['label_emp_list'] = "List of Employers";
+$lang['label_hide_identity'] = "Would you like to hide your identity?";
+$lang['label_add_comments'] = "Add your comments (optional)";
+$lang['label_pay_paypal'] = "Pay via Paypal";
+$lang['label_pay_card'] = "Pay via Credit Card";
+$lang['label_card_holder'] = "Card Holder Name";
+$lang['label_card_no'] = "Card Number";
+$lang['label_card_expiry'] = "Card Expiry";
+$lang['label_card_cvv'] = "Card CVV Code";
+
+$lang['label_monthly'] = "Monthly";
+$lang['label_quarterly'] = "Quarterly";
+$lang['label_halfyearly'] = "Half Yearly";
+$lang['label_yearly'] = "Yearly";
+
+$lang['label_dedication_gift'] = "Dedication </br> We’ll send an e-card to commemorate your gift";
+$lang['label_honoree_name'] = "Honoree's full name";
+$lang['label_honoree_email'] = "Honoree's email";
+$lang['label_send_to_else'] = "Send to Someone Else";
+$lang['label_receipeint_name'] = "Recipient's full name";
+$lang['label_receipeint_email'] = "Recipient's email";
+$lang['label_from_name'] = "From name";
+$lang['label_write_message'] = "Write a message (optional)";
+$lang['label_donate_amount'] = "Donate Amount (in Dollars)";
+$lang['label_your_name'] = "Your Name";
+$lang['label_your_email'] = "Your Email";
+$lang['label_select_country'] = "Select Country";
+$lang['label_onetime'] = "One Time";
+$lang['label_recuring'] = "Recurring";
+
+// Arbaeen Form
+$lang['label_arbaeen_form_name'] = "Name (as it appears on your passport)";
+$lang['label_arbaeen_form_DOB'] = "Date of Birth";
+$lang['label_arbaeen_form_age'] = "Age";
+$lang['label_arbaeen_form_occupation'] = "Occupation";
+$lang['label_arbaeen_form_speciality'] = "Speciality";
+$lang['label_arbaeen_form_email'] = "Email";
+$lang['label_arbaeen_form_email_note'] = "Please provide an email address (that you will check regularly)";
+$lang['label_arbaeen_form_phone'] = "Phone Number";
+$lang['label_arbaeen_form_phone_note'] = "Please include the country code (for e.g. US: +1 609 802 0580)";
+$lang['label_arbaeen_form_address'] = "Address";
+$lang['label_arbaeen_form_biography'] = "Please write a short auto-biography (no more than 300 words) below.";
+$lang['label_arbaeen_form_biography_note'] = "The bio will be shared (exactly as written) to introduce everyone before the trip.";
+
+$lang['placeholder_password'] = "Password";
+$lang['placeholder_cpassword'] = "Confirm Password";
+
+$lang['placeholser_arbaeen_first_name'] = "First";
+$lang['placeholser_arbaeen_middle_name'] = "Middle";
+$lang['placeholser_arbaeen_last_name'] = "Last";
+$lang['placeholder_arbaeen_form_street'] = "Street Address";
+$lang['placeholder_arbaeen_form_street_2'] = "Street Address Line 2";
+$lang['placeholder_arbaeen_form_city'] = "City";
+$lang['placeholder_arbaeen_form_region'] = "Region";
+$lang['placeholder_arbaeen_form_zipcode'] = "Postal/Zip Code";
+
+// Dropdowns
+$lang['dropdown_sehm_childs'] = serialize(['Sehm e Imam'=>'Sehm e Imam', 'Sehm e Sadat'=>'Sehm e Sadat']);
+$lang['dropdown_syed_childs'] = serialize(['Syed'=>'Syed', 'Non Syed'=> 'Non Syed']);

@@ -1,0 +1,344 @@
+<?php
+$lang['text_norecordfound'] = "لا يوجد سجلات";
+$lang['heading_managestations'] = "إدارة المحطات";
+$lang['heading_manageaffiliates'] = "إدارة المسوقين بالعمولة";
+$lang['heading_manageparameters'] = "إدارة المعلمات";
+$lang['heading_managemyaccount'] = "إدارة حسابي";
+$lang['heading_manageresorts'] = "إدارة المنتجع (المنتجعات)";
+$lang['heading_manageresortspromotions'] = "إدارة عروض المنتجعات";
+$lang['heading_manageresortspromotionstypes'] = "إدارة أنواع العروض الترويجية للمنتجعات";
+$lang['heading_manageimagegallerycategory'] = "إدارة فئة معرض الصور";
+$lang['heading_manageimagegallery'] = "إدارة معرض الصور";
+$lang['heading_managevideogallery'] = "إدارة معرض الفيديو";
+$lang['heading_managerecommendation'] = "إدارة التوصية";
+$lang['heading_managemenu'] = "إدارة القائمة";
+$lang['heading_managesitesettings'] = "إدارة إعدادات الموقع";
+
+
+$lang['heading_dashboard'] = "لوحة القيادة";
+$lang['operation_delete_success'] = "تم حذف السجل (السجلات) بنجاح";
+$lang['operation_delete_active_conference'] = "تم حذف السجل (السجلات) بنجاح (باستثناء المؤتمر النشط)";
+$lang['operation_copy_success'] = "تم نسخ السجل (السجلات) بنجاح";
+$lang['operation_saved_success'] = "تم حفظ السجل (السجلات) بنجاح";
+$lang['heading_operation_success'] = "نجاح";
+$lang['heading_operation_error'] = "خطأ";
+
+$lang['heading_operation_logout_success'] = "!تم تسجيل الخروج بنجاح";
+$lang['message_please_login_admin'] = "الرجاء كتابة المستخدم وكلمة المرور لتسجيل الدخول";
+
+$lang['text_resort'] = "منتجع";
+$lang['text_resorts_name'] = "منتجع";
+$lang['text_category_name'] = "اسم التصنيف";
+$lang['text_image_name'] = "اسم الصورة";
+$lang['text_boracayhotels'] = "فنادق بوراكاي";
+$lang['text_update_sort'] = "تحديث الفرز";
+$lang['text_boracay'] = "بوراكاي";
+$lang['text_state'] = "حالة";
+$lang['text_qualification'] = "المؤهل";
+$lang['text_area_interest'] = "مجال الاهتمام";
+$lang['text_security_code'] = "رمز الحماية";
+$lang['text_submit_application'] = "قدم الطلب";
+$lang['text_volunteer_application'] = "تطبيق التطوع";
+$lang['text_video_name'] = "اسم الفيديو";
+$lang['text_title'] = "عنوان";
+$lang['text_name'] = "اسم";
+$lang['text_birthday'] = "تاريخ الولادة";
+$lang['text_city'] = "مدينة";
+$lang['text_email'] = "البريد الإلكتروني";
+$lang['text_subject'] = "موضوع";
+$lang['text_inquiries'] = "استفسارات";
+$lang['text_date'] = "تاريخ";
+$lang['text_username'] = "اسم المستخدم";
+$lang['text_anchor'] = "مرساة";
+$lang['text_sorting'] = "فرز";
+
+$lang['text_code'] = "الشفرة";
+$lang['text_label'] = "ضع الكلمة المناسبة";
+$lang['text_amount'] = "كمية";
+$lang['text_prefix'] = "اختصار";
+$lang['text_order'] = "طلب";
+
+
+$lang['text_option'] = "اختيار";
+$lang['text_add'] = "أضف";
+$lang['text_edit'] = "تعديل";
+$lang['text_view'] = "رأي";
+$lang['text_delete'] = "حذف";
+$lang['text_save'] = "حفظ";
+$lang['text_cancel'] = "إلغاء";
+$lang['text_refresh'] = "تحديث";
+$lang['text_undo'] = "الغاء التحميل";
+$lang['text_signout'] = "خروج";
+
+$lang['text_facilities'] = "مرافق";
+$lang['text_maps'] = "خرائط";
+$lang['text_rooms_types'] = "أنواع الغرف";
+$lang['text_rooms&prices'] = "الغرفة والأسعار";
+$lang['text_breakfast_includes'] = "شامل وجبة الإفطار";
+$lang['text_hotdeal_desc'] = "هناك أسعار خاصة متاحة في هذا الفندق لا يمكننا نشرها. اتصل الآن للحصول على أفضل صفقة على الإطلاق.";
+$lang['text_tax&service_included'] = "(الأسعار المعروضة تشمل الضرائب ورسوم الخدمة)";
+$lang['text_chooseroom&dates'] = "الرجاء اختيار غرفتك والتواريخ";
+$lang['text_numberofrooms'] = "عدد الغرف";
+$lang['text_arrivaldate'] = "تاريخ الوصول";
+$lang['text_departuredate'] = "تاريخ المغادرة";
+$lang['text_nights'] = "ليالي";
+$lang['text_onlinebooking'] = "الحجز عبر الإنترنت";
+$lang['text_dateofarrival'] = "موعد الوصول";
+$lang['text_roomdetails'] = "تفاصيل الغرفة";
+$lang['text_nightsperseason'] = "ليالي في كل موسم";
+$lang['text_priceperday'] = "السعر في اليوم";
+$lang['text_baluponarrival']	= "الرصيد المستحق الدفع عند الوصول";
+$lang['text_personalinfo']	= "معلومات شخصية";
+$lang['text_2easypayoptions']	= "خياران من خيارات الدفع السهل";
+$lang['text_securecardpyament']	= "الدفع الآمن ببطاقة الائتمان";
+$lang['text_directbanktransfer']	= "تحويل مصرفي مباشر";
+$lang['text_1.']	= "1. ";
+$lang['text_2.']	= "2. ";
+$lang['text_fullpayment']	= "( دفع كامل )";
+$lang['text_choosepaymentoption']	= "اختر خيار الدفع";
+$lang['text_reviewterms&conditions']	= "* .يرجى مراجعة الشروط والأحكام";
+$lang['text_iagreetotc&cp']	= ".أوافق على٪ s و٪ s";
+$lang['text_allow30seconds']	= ".يرجى السماح بما يصل إلى 30 ثانية للاتصال بصفحة الحجوزات الآمنة الخاصة بنا";
+$lang['text_liveagent']	= "وكيل مباشر";
+$lang['text_firstname']	= "الاسم الاول";
+$lang['text_middlename']	= "الاسم الأوسط";
+$lang['text_lastname']	= "الكنية";
+$lang['text_confirmemailaddress']	= "أكد عنوانك الإلكتروني";
+$lang['text_phonenumber']	= "رقم الهاتف";
+$lang['text_cellphonenumber']	= "رقم الهاتف المحمول";
+$lang['text_destinationhotel']	= "فندق الوجهة";
+$lang['text_mbghotelbookingcode']	= "رمز حجز فندق MyBoracayGuide.com (إن وجد)";
+$lang['text_addtionalreq_or_inq']	= "طلبات أو استفسارات إضافية: (اختياري)";
+$lang['text_discount']	= "خصم";
+$lang['text_discountedgrandtotal']	= "المجموع الكلي المخصوم";
+$lang['text_noofadults']	= "عدد البالغين";
+$lang['text_noofchildren']	= "عدد الاطفال";
+$lang['text_ageofchildren']	= "عمر الأطفال";
+$lang['text_seperatedbycommas']	= "(مفصولة بفواصل)";
+$lang['text_promocode']	= "رمز ترويجي";
+$lang['text_validatepromocode']	= "تحقق من العملية";
+
+
+$lang['text_promocode%discount']	= ":كود الخصم٪ خصم:";
+$lang['text_country']	= "بلد";
+$lang['text_promoincludes']	= "يشمل العرض الترويجي";
+$lang['text_validatepromo-code']	= "التحقق من صحة الرمز الترويجي";
+$lang['text_clickonpromocode_heading']	= "لم تقم بالنقر فوق" . $lang['text_validatepromo-code'];
+$lang['text_clickonpromocode_message']	= "تأكد من النقر فوق'". $lang['text_validatepromo-code'] ."' after typing your voucher code - Do you want to continue with PromoCode?";
+$lang['text_requestrealestate']	= "طلب عقار";
+$lang['text_pleasefillouttheform']	= ".يرجى ملء النموذج";
+$lang['text_sitedesc1']	= "دليل جزيرة بوراكاي";
+$lang['text_sitedesc2']	= "دليل";
+$lang['text_legal']	= "قانوني";
+$lang['text_about'] = "معلومات عنا";
+$lang['text_about_desc1'] = "MyGuides Inc. هي شركة سفر بالفلبين تأسست في عام 2008. نحن متخصصون في تقديم تجربة دافئة ومستنيرة إلى عالم السفر عبر الإنترنت. نحن نسعى جاهدين لتقديم أوسع مجموعة مختارة من الفنادق وبأقل الأسعار وتجربة حجز سريعة وسلسة. تدير شركة MyGuides Inc. حاليًا مواقع الويب التالية:";
+$lang['text_about_desc2'] = ".يرجى إعلامنا إذا كان هناك أي طريقة يمكننا من خلالها جعل عطلتك أكثر متعة";
+
+$lang['text_capital_realestate'] = "العقارات";
+$lang['text_description_1'] = "الوصف 1";
+$lang['text_description_2'] = "الوصف 2";
+$lang['text_realestate_agent'] = "سمسار";
+$lang['text_contactinfo'] = "معلومات الاتصال";
+$lang['text_information'] = "معلومات";
+$lang['text_rooms'] = "غرف";
+$lang['text_addnote'] = 'ملاحظة إضافية';
+$lang['text_paymenttype'] = 'نوع الدفع';
+$lang['text_cvccode'] = 'مدونة';
+$lang['text_expiryyear'] = 'سنة انتهاء الصلاحية';
+$lang['text_expirymonth'] = 'شهر انتهاء الصلاحية';
+$lang['text_cardno'] = 'رقم البطاقة';
+$lang['text_cardholdername'] = 'إسم صاحب البطاقة';
+$lang['text_selectsubactivity'] = 'حدد النشاط الفرعي';
+$lang['text_selectnoofpeople'] = 'حدد عدد الأشخاص';
+$lang['text_hotel'] = 'الفندق';
+$lang['text_securitycode'] = 'رمز الحماية';
+$lang['text_arrival'] = 'وصول';
+$lang['text_departure'] = 'مغادرة';
+$lang['text_arrivalairport'] = 'مطار الوصول';
+$lang['text_departureairport'] = 'مطار المغادرة';
+$lang['text_perperson'] = 'للشخص الواحد';
+$lang['text_perpersonprice'] = 'سعر الفرد';
+$lang['text_totalcost'] = 'التكلفة الإجمالية';
+$lang['text_note:morethan10'] = 'ملاحظة: إذا كانت مجموعتك تضم 10 أشخاص أو أكثر ، فيرجى مراسلتنا عبر البريد الإلكتروني على٪ s';
+$lang['text_noofpeople'] = 'عدد الاشخاص';
+$lang['text_arrivaltime'] = "وقت الوصول";
+$lang['text_arrivalairline'] = "طيران الوصول";
+$lang['text_arrivalflightno'] = "رقم رحلة الوصول";
+$lang['text_departuretime'] = "وقت المغادرة";
+$lang['text_departureairline'] = "طيران المغادرة";
+$lang['text_departureflightno'] = "رقم رحلة المغادرة";
+$lang['text_personalinfo'] = "معلومات شخصية";
+$lang['text_flightinfo'] = "معلومات الرحلة";
+$lang['text_servicecharge'] = "تكلفة الخدمة";
+$lang['text_tax'] = "ضريبة";
+$lang['text_transfertype'] = "نوع التحويل";
+$lang['text_priceperperson'] = "السعر للفرد";
+$lang['text_transfer'] = "نقل";
+$lang['text_bookingcode'] = "رمز الحجز";
+$lang['text_arrivalminutes'] = "دقائق الوصول";
+$lang['text_arrivalflightno'] = "رقم ملف الوصول";
+$lang['text_departureminutes'] = "دقائق المغادرة";
+$lang['text_booknow'] = "احجز الآن";
+$lang['text_makepayment'] = "قم بالدفع";
+$lang['text_enterallinformation'] = "يجب إدخال جميع المعلومات أدناه لتقديم معاملة";
+$lang['text_customerip'] = "للعميل";
+$lang['text_bookingconditions'] = "شروط الحجز";
+$lang['text_expirydate'] = "تاريخ الانتهاء";
+$lang['text_note'] = "ملحوظة";
+$lang['text_chargewillappearasJMC'] = "ستظهر الرسوم باسم JMC * TravelPhilippines London GB في كشف حسابك.";
+$lang['text_ssl'] = "SSL";
+$lang['text_backtombg'] = "العودة إلى دليل بلدي بوراكاي";
+$lang['text_chooseyourcountry'] = "اختر بلدك";
+$lang['text_chargedinUSD'] = "(مشحونة بالدولار الأمريكي)";
+$lang['text_cvvdescription'] = ".من أجل سلامتك وأمنك ، نطلب منك إدخال رقم التحقق من بطاقتك. رقم التحقق هو رقم مكون من 3 أرقام مطبوع على ظهر بطاقتك. يظهر بعد رقم بطاقتك وعلى يمينه";
+$lang['text_sketchplan'] = "خطة رسم";
+$lang['text_additionaldocumentsscanned'] = "مستندات إضافية (ممسوحة ضوئيًا)";
+$lang['text_commaseperatedcontactinfo'] = "معلومات الاتصال مفصولة بفاصلة";
+$lang['text_commaseperatedemail'] = "عنوان بريد إلكتروني مفصول بفواصل";
+$lang['text_propertydocuments-photos'] = "مستندات الملكية / الصور";
+
+
+$lang['text_datatable_next'] = "التالى";
+$lang['text_datatable_prev'] = "السابق";
+$lang['text_datatable_sZeroRecords'] = "لا توجد سجلات مطابقة";
+$lang['text_datatable_sInfoEmpty'] = "إظهار 0 إلى 0 من 0 مدخلات";
+$lang['text_datatable_sInfo'] = "إظهار _START_ إلى _END_ من _TOTAL_ من الإدخالات";
+$lang['text_datatable_sInfoFiltered'] = "(تمت تصفيته من إجمالي إدخالات _MAX_)";
+$lang['text_datatable_sLengthMenu'] = "_قائمة طعام_ لكل صفحة";
+$lang['text_datatable_sSearch'] = "بحث:";
+
+
+#oct-31-2014
+$lang['text_copy'] = "نسخ";
+$lang['text_ratingreview_heading'] = "تقييم";
+$lang['text_ratingreview'] = ".كن مساهما! اكتب مراجعة وشارك تجربتك مع الآخرين";
+$lang['text_poweredby'] = "مشغل بواسطةy";
+$lang['text_boracayrealestate'] = "عقارات بوراكاي";
+$lang['text_404error'] = "404 خطأ";
+$lang['text_lowseason'] = "الموسم المنخفض";
+$lang['text_highseason'] = "قمة الموسم";
+$lang['text_peakseason'] = "موسم الذروة";
+$lang['text_person'] = "شخص";
+$lang['text_people'] = "اشخاص";
+$lang['text_numberwords_dictionary'] = array(	0                   => 'صفر',
+												1                   => 'واحد',
+												2                   => 'اثنان',
+												3                   => 'ثلاثة',
+												4                   => 'أربعة',
+												5                   => 'خمسة',
+												6                   => 'ستة',
+												7                   => 'سبعة',
+												8                   => 'ثمانية',
+												9                   => 'تسعة',
+												10                  => 'عشرة',
+												11                  => 'أحد عشر',
+												12                  => 'اثنا عشر',
+												13                  => 'ثلاثة عشر',
+												14                  => 'أربعة عشر',
+												15                  => 'خمسة عشر',
+												16                  => 'ستة عشر',
+												17                  => 'سبعة عشر',
+												18                  => 'ثمانية عشر',
+												19                  => 'تسعة عشر',
+												20                  => 'عشرين',
+												30                  => 'ثلاثين',
+												40                  => 'أربعون',
+												50                  => 'خمسون',
+												60                  => 'ستين',
+												70                  => 'سبعون',
+												80                  => 'ثمانين',
+												90                  => 'تسعين',
+												100                 => 'مائة',
+												1000                => 'ألف',
+												1000000             => 'مليون',
+												1000000000          => 'مليار',
+												1000000000000       => 'تريليون',
+												1000000000000000    => 'كوادريليون',
+												1000000000000000000 => 'كوينتيليون'
+											);
+
+
+$lang['text_login'] = "تسجيل الدخول";
+$lang['text_newuserregisterhere'] = "مستخدم جديد سجل هنا!";
+$lang['text_loginwithyourimiacnt'] = "تسجيل الدخول باستخدام حساب IMI الخاص بك";
+$lang['text_register'] = "تسجيل";
+$lang['text_already_register'] 	  = "بالفعل تنشيط";
+$lang['text_already_register_desc'] = "يتم تنشيط حسابك بالفعل";
+
+$lang['text_account_activated_text'] 		= "حسابك الآن مفعل. انقر هنا للمتابعة
+<a href='". site_url( "memberlogin" ) ."'>صفحة تسجيل الدخول</a>";
+$lang['text_account_activated'] 		= "تم تفعيل الحساب";
+$lang['text_thankyou_submission'] = 'شكرا لتقريركم';
+$lang['text_thankyou_submission_line'] = 'لقد تلقينا بنجاح طلبك لمهمة الأربعين الطبية ، وسوف نتصل بك قريبًا';
+$lang['text_registeryouraccount'] = "سجل حسابك";
+$lang['text_thankyou_for_register'] = "تم تقديم تسجيلك لحساب My IMI الخاص بك. يرجى التحقق من بريدك الإلكتروني للحصول على رابط التنشيط.";
+$lang['text_registeryouraccount_activationlink'] = "شكرًا لك على تسجيل حساب IMI الخاص بي. الرجاء الضغط على الرابط أدناه لتفعيل حسابك. 
+بمجرد التنشيط ، يمكنك تسجيل الدخول إلى ملف التعريف الخاص بك باستخدام زر تسجيل الدخول في أعلى يمين الموقع لعرض ملف التعريف الخاص بك وللتسجيل أو تجديد عضوية IMI اليوم!";
+$lang['text_accountdetails'] = "تفاصيل الحساب";
+$lang['text_accountregistration/code'] = "رمز تسجيل / تفعيل الحساب";
+$lang['text_donthveimiacnt'] = 'ليس لديك حساب؟';
+$lang['text_signupnow'] = 'أفتح حساب الأن';
+$lang['text_cantaccessyracnt'] = 'نسيت رقمك السري؟';
+$lang['text_forgotpassword'] = 'هل نسيت كلمة المرور';
+$lang['text_dashboard'] = 'لوحة القيادة';
+$lang['text_logout'] = 'تسجيل خروج';
+$lang['text_logoutsuccessfull'] = 'تم تسجيل الخروج بنجاح';
+$lang['text_forgotpassword_thankyou'] = '.تم إعادة تعيين كلمة المرور الخاصة بك. يرجى التحقق من بريدك الإلكتروني للحصول على كلمة مرور جديدة';
+$lang['text_credentialsupdated'] = '.تحديث بيانات الاعتماد الخاصة بك. الرجاد الدخول على الحساب من جديد';
+$lang['text_logoutonceupdatedinfo'] = '.يمكنك تحديث معلومات حسابك أدناه. سيتم تسجيل خروجك بمجرد تحديث معلوماتك';
+$lang['text_sightseeing'] = 'معالم المدينة';
+$lang['text_abstractsubmissionform'] = 'نموذج تقديم الملخصات';
+$lang['text_workshopform'] = 'نموذج ورشة العمل';
+$lang['text_workshopformsubject'] = "نموذج ورشة العمل";
+$lang['text_abstractform_desc'] = 'ستكون جميع الملصقات والعروض التقديمية الشفوية باللغة الإنجليزية<br />يرجى الاطلاع على المبادئ التوجيهية لإعداد الملصق على موقع المؤتمر<br />سيتم الإعلان عن قائمة الملصقات والعروض التقديمية الشفوية المقبولة يوم<strong>%s</strong>';
+$lang['text_conferenceregistration'] = 'التسجيل في المؤتمر';
+$lang['text_conferenceregistrationpricing'] = 'أسعار التسجيل في المؤتمر';
+$lang['text_conferencepayment'] = 'دفع المؤتمر';
+$lang['text_abspayment'] = 'دفع نموذج تقديم الملخص';
+$lang['text_payment'] = 'دفع';
+
+
+$lang['text_callback_invalidemail'] = 'عنوان بريدك الإلكتروني غير موجود في سجلاتنا';
+$lang['text_callback_credentialsnotcorrect'] = 'أوراق الاعتماد غير صحيحة - الرجاء إعادة المحاولة';
+$lang['text_callback_activationemailsent'] = 'حسابك غير نشط حتى الآن. يرجى تفعيله أولا.<br/>إذا لم تستلم بريد التنشيط حتى الآن<a href="'.site_url('register/resendActivationLink/'.base64_encode(isset($_POST['email']) ? $_POST['email'] : 'notfound')).'">انقر هنا</a>';
+$lang['text_callback_accountblocked'] = '.حسابك مغلق حاليا. يرجى الاتصال بالمسؤول';
+$lang['text_email_yourpasswordreset'] = 'تم إعادة تعيين كلمة المرور الخاصة بك. يرجى ملاحظة أوراق اعتمادك الجديدة. انقر أدناه لتسجيل الدخول.';
+$lang['text_acceptednotaccepted'] = 'مقبولة / غير مقبولة';
+$lang['text_pdf'] = 'بي دي إف';
+$lang['text_doc'] = 'DOC';
+$lang['text_contactus'] = "اتصل بنا";
+$lang['text_contactussubject'] = "استفسار الاتصال";
+$lang['text_alocalparticipant'] = "مشارك محلي (من إيران)";
+$lang['text_alocalparticipant_desc'] = ".مشارك محلي من داخل إيران ، تم إنشاء موقع محلي للتعامل مع التسجيل والمدفوعات في البلد. الرجاء النقر هنا إذا لم تتم إعادة توجيهك في غضون ثوان قليلة";
+$lang['text_aninternationalparticipant'] = "مشارك دولي";
+$lang['text_aninternationalparticipant_desc'] = ".ستشمل عملية التسجيل الخاصة بك جمع المعلومات والوثائق للحصول على التأشيرات وجميع الترتيبات المتعلقة بالمؤتمر المحلي. يرجى الاستعداد لتقديم هذه المعلومات في هذا الوقت";
+$lang['text_plsselectregion'] = 'الرجاء تحديد منطقتك';
+$lang['text_areyou?'] = 'أنت ؟';
+$lang['text_registrationcomplete_desc'] = '.التسجيل الخاص بك كامل ودفع بنجاح';
+$lang['text_registrationcomplete'] = 'اكتمل التسجيل';
+
+$lang['text_saveandproceed'] = 'حفظ والمتابعة';
+$lang['text_proceed'] = 'تقدم';
+$lang['text_youcanalwayspaylater'] = '.بمجرد الإرسال ، يمكنك دائمًا الاستئناف لاحقًا';
+$lang['heading_operation_info']	= "معلومات";
+$lang['text_home']	= "الصفحة الرئيسية";
+$lang['text_pleasecompleteformwithproperinfo']	= "توجد بعض أخطاء التحقق من صحة النموذج. يرجى التحقق وإعادة الإرسال.";
+$lang['text_screen5_planningtostay'] = 'إذا كنت تخطط للبقاء بعد٪ s ، يرجى ملء الجدول التالي';
+$lang['text_screen5_planningtostay_2'] = 'مخطط الإقامة الخاص بك بعد٪ s';
+$lang['text_conferencehighlights'] = 'يسلط الضوء على المؤتمر';
+$lang['text_upcomingdeadlines'] = 'المواعيد النهائية القادمة';
+$lang['text_conferenceprogram'] = 'برنامج المؤتمر';
+$lang['text_programspeakers'] = 'برنامج المتحدثين';
+$lang['text_accomodation'] = 'الإقامة';
+$lang['text_downloadcompleteprogram'] = 'تنزيل البرنامج الكامل وكتاب الملخصات';
+$lang['text_sightseeing'] = 'معالم المدينة';
+$lang['text_viewall'] = 'مشاهدة الكل';
+$lang['text_readmore'] = 'اقرأ أكثر';
+$lang['paypal_failed'] = 'فشل';
+$lang['loginalert_incms'] = '.الرجاء تسجيل الدخول حتى نتمكن من البدء<a href="'. site_url("memberlogin") .'">.انقر هنا</a>';
+
+
+$lang['label_contact_info'] = ": معلومات الاتصال";
+
+include('emails_lang.php');
+?>

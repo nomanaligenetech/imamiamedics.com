@@ -1,0 +1,38 @@
+<div class="members_sec fl_lft w_100">
+    <div class="myTableContainer">
+		<?php
+        
+		
+
+		if ( $files_details_1 -> num_rows() > 0 )
+		{
+		?>
+            <table cellspacing="0" cellpadding="0" class="fl_lft w_100 myTable b_white">
+                <tr class="b_grey t_white">
+                    <td class="txt_lft">Name</td>
+                    <td class="txt_lft w_45">Purpose</td>
+                    <td class="txt_lft">Amount</td>
+                    <td class="">Method of Payment</td>
+                    <td class="">Receipt Number</td>
+                </tr>
+                <?php
+				foreach ( $files_details_1->result_array() as $fd1)
+				{
+					$tmp_pp			= json_decode( $fd1['paypal_post'], TRUE );
+				?>
+                    <tr class="in_padding border">
+                        <td class="txt_lft"><?php echo $tmp_pp['1'];?></td>
+                        <td class="txt_lft"><?php echo $tmp_pp['4'];?></td>
+                        <td class="txt_lft"><?php echo $tmp_pp['2'];?></td>
+                        <td><?php echo $tmp_pp['5'];?></td>
+                        <td><?php echo $tmp_pp['6'];?></td>
+                    </tr>
+                <?php
+				}
+				?>
+            </table>
+		<?php
+		}
+		?>
+    </div>
+</div>

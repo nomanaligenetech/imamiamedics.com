@@ -1,0 +1,300 @@
+<div class="bg_white hwrap pos_rel">
+    <div class="cont1 pos_rel">
+        <div class="logo trans025">
+            <a href="<?php echo site_url();?>" title="<?php echo SessionHelper::_get_session("SITE_META_TITLE", "site_settings");?>">
+            	<img class="trans025" src="<?php echo base_url("assets/frontend/images/logo-".is_countryCheck(true).".png");?>" alt="<?php echo SessionHelper::_get_session("SITE_META_TITLE", "site_settings");?>" />
+            </a>
+        </div>
+        
+        <div class="head_sec2 fl_lft hide_main_menu">
+            <div class="mobile_menu_btn">
+                <img src="<?php echo base_url("assets/frontend/images/mobile_menu_btn.png");?>" alt="mobile_menu_btn" width="36" height="36" />
+            </div>
+        
+            <?php
+            $TMP_navigation					= $this->functions->topmenunavigation($content_languages);
+            ?>
+            <div class="mobile_nav_of">
+                <nav class="header_nav">
+                    <ul>
+                        <li><a href="<?php echo site_url();?>"><span><?php echo lang_line('text_home'); ?></span><img src="<?php echo base_url("assets/frontend/images/icon_home1.jpg");?>" alt="icon_home1" /></a></li>
+                        
+                        <?php
+                        foreach ($TMP_navigation as $key => $top)
+                        {
+                            $TMP_has_popup					= FALSE;
+                            if ( array_key_exists("is_child", $top) )
+                            {
+                                if ( count($top['is_child']) > 0 )
+                                {
+                                    $TMP_has_popup			= 'aria-haspopup="true"';
+                                }
+                            }
+                            ?>
+                                <li><a href="<?php echo $top['href'];?>" <?php echo $TMP_has_popup;?>><?php echo $top['name'];?></a>
+                                
+                                <?php
+                                if ( $TMP_has_popup )
+                                {
+                                    ?>
+                                    <ul>
+                                        <?php
+                                        foreach ( $top['is_child'] as $child)
+                                        {
+                                            $TMP_sub_has_popup					= FALSE;
+                                            if ( array_key_exists("is_child", $child) )
+                                            {
+                                                if ( count($child['is_child']) > 0 )
+                                                {
+                                                    $TMP_sub_has_popup			= 'aria-haspopup="true"';
+                                                }
+                                            }
+                                            ?>
+                                                
+                                                <li>
+                                                    <a href="<?php echo $child['href'];?>" target="<?php echo $child['target'];?>" <?php echo $TMP_sub_has_popup;?>>
+                                                        <?php echo $child['name'];?>
+                                                    </a>
+                                                    
+                                                    
+                                                    <?php
+													#2nd level
+                                                    if ( $TMP_sub_has_popup )
+                                                    {
+                                                        ?>
+                                                            <ul>
+                                                                <?php
+                                                                foreach ( $child['is_child'] as $sub)
+                                                                {
+																	
+																	$TMP_sub_3_has_popup					= FALSE;
+																	if ( array_key_exists("is_child", $sub) )
+																	{
+																		if ( count($sub['is_child']) > 0 )
+																		{
+																			$TMP_sub_3_has_popup		= 'aria-haspopup="true"';
+																		}
+																	}
+                                                                    ?>
+                                                                        
+                                                                        <li>
+                                                                            <a href="<?php echo $sub['href'];?>" target="<?php echo $sub['target'];?>">
+                                                                                <?php echo $sub['name'];?>
+                                                                            </a>
+                                                                            
+                                                                            
+                                                                            
+                                                                            <?php
+																			#3rd level
+																			if ( $TMP_sub_3_has_popup )
+																			{
+																				$class_level_2 = "";
+																				if(trim($sub['name']) == "Silver Jubilee Conference"){
+																					$class_level_2 = "class='silver_jubilee_child'";
+																				}
+																				?>
+																					<ul <?php echo $class_level_2; ?>>
+																						<?php
+																						foreach ( $sub['is_child'] as $sub_3)
+																						{
+																							$TMP_sub_4_has_popup					= FALSE;
+																							if ( array_key_exists("is_child", $sub_3) )
+																							{
+																								if ( count($sub_3['is_child']) > 0 )
+																								{
+																									$TMP_sub_4_has_popup		= 'aria-haspopup="true"';
+																								}
+																							}
+																							?>
+																								
+																								<li>
+																									<a href="<?php echo $sub_3['href'];?>" target="<?php echo $sub_3['target'];?>">
+																										<?php echo $sub_3['name'];?>
+																									</a>
+                                                                                                    
+                                                                                                    
+                                                                                                    <?php
+																									#4th level
+																									if ( $TMP_sub_4_has_popup )
+																									{
+																										$class_level_3 = "";
+																										if(trim($sub_3['name']) == "Karachi"){
+																											$class_level_3 = "class='karachi_child'";
+																										}
+																										?>
+																											<ul <?php echo $class_level_3; ?>>
+																												<?php
+																												foreach ( $sub_3['is_child'] as $sub_4)
+																												{
+																													$TMP_sub_5_has_popup					= FALSE;
+																													if ( array_key_exists("is_child", $sub_4) )
+																													{
+																														if ( count($sub_4['is_child']) > 0 )
+																														{
+																															$TMP_sub_5_has_popup		= 'aria-haspopup="true"';
+																														}
+																													}
+																													?>
+																														
+																														<li>
+																															<a href="<?php echo $sub_4['href'];?>" 
+                                                                                                                            target="<?php echo $sub_4['target'];?>">
+																																<?php echo $sub_4['name'];?>
+																															</a>
+                                                                                                                            
+                                                                                                                            
+                                                                                                                            
+                                                                                                                            <?php
+																															#5th level
+																															if ( $TMP_sub_5_has_popup )
+																															{
+																																?>
+																																	<ul>
+																																		<?php
+																																		foreach ( $sub_4['is_child'] as $sub_5)
+																																		{
+																																			?>
+																																				
+																																				<li>
+																																					<a href="<?php echo $sub_5['href'];?>" 
+																																					target="<?php echo $sub_5['target'];?>">
+																																						<?php echo $sub_5['name'];?>
+																																					</a>
+																																				</li>
+																																				
+																																			<?php	
+																																		}
+																																		?>
+																																	</ul>
+																																<?php
+																															}
+																															?>
+		
+																														</li>
+																														
+																													<?php	
+																												}
+																												?>
+																											</ul>
+																										<?php
+																									}
+																									?>
+                                                                            
+                                                                            
+																								</li>
+																								
+																							<?php	
+																						}
+																						?>
+																					</ul>
+																				<?php
+																			}
+																			?>
+                                                                           
+                                                                        </li>
+                                                                        
+                                                                    <?php	
+                                                                }
+                                                                ?>
+                                                            </ul>
+                                                        <?php
+                                                    }
+                                                    ?>
+                                                </li>
+                                                
+                                            <?php	
+                                        }
+                                        ?>
+                                    </ul>
+                                    <?php
+                
+                                }
+                                ?>
+                                </li>
+                            <?php
+                        }
+                        ?>
+                        
+                        
+                    </ul>
+                </nav>
+                
+                <div class="fl_rit hdr_rite_sec">
+                
+                
+                
+                	<?php
+					if ( SessionHelper::_get_session("user_logged_in") )
+					{
+					?>
+						<div class="fl_lft m_rite25 m_top5 dbrd_link">
+                            <a  class="fl_lft" href="<?php echo site_url( "account/myprofile/controls/view" );?>" class="blue_btn1">
+                                <?php echo lang_line('text_myprofile'); ?> <span class="m_left5">/</span> 
+                            </a>
+                            
+                            <a  class="fl_lft" href="<?php echo site_url( "logout" );?>">
+                                &nbsp;&nbsp;<img src="<?php echo site_url()."assets/frontend/images/1419883236_logout_".is_countryCheck(true).".png";?>" />
+                            </a>
+						</div>
+					<?php
+					}
+					else
+					{
+						if(is_countryCheck(FALSE,FALSE,TRUE) == 'canada'){
+							?>
+							<a href="<?php echo site_url('register');?>" class="blue_btn1 regbtn_can_only"><?php echo lang_line('text_signupforaccount'); ?></a>
+							<?php	
+						}
+					?>
+                    	<a href="<?php echo site_url( 'memberlogin' );?>" class="blue_btn1"><?php echo lang_line('text_login'); ?></a>
+					<?php
+					}
+					?>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <?php
+					if(is_countryCheck(FALSE,FALSE,TRUE) != 'canada'){
+					if ( $header_socialbuttons -> num_rows() > 0 )
+                	{
+					?>
+                        <ul class="smedia_list1">
+                        	<?php
+							foreach ( $header_socialbuttons -> result_array() as $hsb )
+							{
+								$TMP_content					= $this->mixed_queries->fetch_records("cmscontent", " AND  menuid = '". $hsb['id'] ."' ");	
+								$TMP_attributes					= $this->functions->set_link_attributes( $hsb, $TMP_content, SLUG_PAGE );
+							?>
+                            	<li>
+                                    <a target="<?php echo $TMP_attributes['target'];?>" href="<?php echo $TMP_attributes['href'];?>">
+                                    	<img src="<?php echo $this->functions->timthumb( $hsb['photo_image'], "", 30, FALSE, FALSE );?>"  alt="<?php echo $hsb['name'];?>" />
+                                    </a>
+                                </li>
+                            <?php
+							}
+							?>
+                        </ul>
+                    <?php
+					}
+					}
+					?>
+
+					<?php 
+					if ( is_countryCheck(FALSE,FALSE,TRUE) != 'canada' ){
+						echo form_dropdown('lang', DropdownHelper::content_languages_dropdown(), set_value("lang", SessionHelper::_get_session('LANG_CODE')), "class='language-dropdown ' id='language-dropdown'" );
+					}?>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    <span class="mobile_menu_open_btn">
+    <img src="<?php echo base_url("assets/frontend/images/mobile_menu_btn2.jpg");?>" width="36" height="36" alt="menu" />
+    </span>
+</div>

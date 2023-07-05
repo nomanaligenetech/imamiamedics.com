@@ -1,0 +1,438 @@
+<table class="table table_form">
+    <tr>
+        <td class="td_bg" style="width:50%">First Name </td>
+        <td colspan="2" class="td_bg" style="width:50%">
+            <?php echo $table_record->first_name; ?>
+        </td>
+    </tr>
+    <tr>
+        <td class="td_bg">Middle Name </td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->middle_name; ?>
+        </td>
+    </tr>
+    <tr>
+        <td class="td_bg">Last Name </td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->last_name; ?>
+        </td>
+    </tr>
+
+    <?php if(!is_null($table_record->gender)){?>
+    <tr>
+        <td class="td_bg">Gender</td>
+        <td colspan="2" class="td_bg">
+            <?php echo DropdownHelper::gender_dropdown(true, $table_record->gender); ?>
+        </td>
+    </tr>
+    <?php } ?>
+    <tr>
+        <td class="td_bg">Email: </td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->email; ?>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="td_bg">Phone: </td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->phone_number; ?>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="td_bg">Date of Birth: </td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->birth_date; ?>
+        </td>
+    </tr>
+    <?php if($table_record->age > 0){?>
+    <tr>
+        <td class="td_bg">Age: </td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->age; ?>
+        </td>
+    </tr>
+    <?php } ?>
+    <tr>
+        <td class="td_bg">Occupation: </td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->occupation; ?>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="td_bg">Speciality: </td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->speciality; ?>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="td_bg">Street Address: </td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->street_address; ?>
+        </td>
+    </tr>
+
+    <?php if ($table_record->street_address_2 != "") { ?>
+
+    <tr>
+        <td class="td_bg">Street Address 2: </td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->street_address_2; ?>
+        </td>
+    </tr>
+
+    <?php 
+} ?>
+
+    <tr>
+        <td class="td_bg">City: </td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->city; ?>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="td_bg">Region: </td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->region; ?>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="td_bg">Postal/Zip Code: </td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->postal_code; ?>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="td_bg">Country: </td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->country; ?>
+        </td>
+    </tr>
+    
+    <?php if(!is_null($table_record->how_old)){?>
+    <tr>
+        <td class="td_bg"><?php echo lang_line('label_arbaeen_form_how_old'); ?></td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->how_old; ?>
+        </td>
+    </tr>
+    <?php } ?>
+    <?php if(!is_null($table_record->know_bmi)){?>
+    <tr>
+        <td class="td_bg">Do you know your BMI ?</td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->know_bmi; ?>
+        </td>
+    </tr>
+    <?php } ?>
+    <?php if(!is_null($table_record->bmi)){?>
+    <tr>
+        <td class="td_bg">BMI (Body Mass Index)</td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->bmi; ?>
+        </td>
+    </tr>
+    <?php } ?>
+    <?php if(!is_null($table_record->smoking_hist)){?>
+    <tr>
+        <td class="td_bg">Smoking History</td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->smoking_hist; ?>
+        </td>
+    </tr>
+    <?php } ?>
+    <?php if(!is_null($table_record->med_his)){?>
+    <tr>
+        <td class="td_bg">Do you have a history of taking or currently take any medications that affect your immune system, such as cortisone, prednisone or other steroids, anticancer drugs, or have you had any radiation treatments ?</td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->med_his; ?>
+        </td>
+    </tr>
+    <?php } ?>
+    <?php if(!is_null($table_record->med_curr)){?>
+    <tr>
+        <td class="td_bg">Are you taking any prescription medications currently ?</td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->med_curr; ?>
+        </td>
+    </tr>
+    <?php } ?>
+    <?php if(!is_null($table_record->med_list) && !empty(trim($table_record->med_list))){?>
+    <tr>
+        <td class="td_bg">Please list the prescription medications you currently take</td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->med_list; ?>
+        </td>
+    </tr>
+    <?php } ?>
+    <?php if(!is_null($table_record->health_cond)){?>
+    <tr>
+        <td class="td_bg">Health conditions. Please select all conditions that you have currently OR have had a history of:</td>
+        <td colspan="2" class="td_bg">
+        <?php
+            $h_c = unserialize($table_record->health_cond);
+            $i = 1;
+            foreach ($h_c as $key => $value) {
+                if ($i > 1) {
+                    echo ', ';
+                }
+                echo $value;
+                if ($value == 'Other') {
+                    echo ": ( ".$table_record->other_health_cond." )";
+                }
+                $i++;
+            } ?>
+        </td>
+    </tr>
+    <?php } ?>
+    <?php if(!is_null($table_record->type_covid19) && $table_record->type_covid19 != 0){?>
+    <tr>
+        <td class="td_bg">Covid 19 Details</td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->type_covid19; ?>
+        </td>
+    </tr>
+    <?php } ?>
+    <?php if(!is_null($table_record->type_diabetes) && $table_record->type_diabetes != 0){?>
+    <tr>
+        <td class="td_bg">Diabetes Type</td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->type_diabetes; ?>
+        </td>
+    </tr>
+    <?php } ?>
+    <?php if(!is_null($table_record->type_heart_disease) && !empty($table_record->type_heart_disease)){?>
+    <tr>
+        <td class="td_bg">Heart Diseases</td>
+        <td colspan="2" class="td_bg">
+        <?php
+            $h_d = unserialize($table_record->type_heart_disease);
+            $i = 1;
+            foreach ($h_d as $key => $value) {
+                if ($i > 1) {
+                    echo ', ';
+                }
+                echo $value;
+                $i++;
+            } ?>
+        </td>
+    </tr>
+    <?php } ?>
+    <?php if(!is_null($table_record->health_his)){?>
+    <tr>
+        <td class="td_bg">Please include brief information below regarding any health history/current conditions (listed above or otherwise) AND your personal physical & mental fitness self-assessment.</td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->health_his; ?>
+        </td>
+    </tr>
+    <?php } ?>
+    <?php if(!is_null($table_record->covid_vacc)){?>
+    <tr>
+        <td class="td_bg">Have you been vaccinated against COVID-19 ?</td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->covid_vacc; ?>
+        </td>
+    </tr>
+    <?php } ?>
+    <?php if(!is_null($table_record->covid_vacc_det) && !empty(trim($table_record->covid_vacc_det))){?>
+    <tr>
+        <td class="td_bg">COVID-19 Vaccination Details / Schedule / Reasons</td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->covid_vacc_det; ?>
+        </td>
+    </tr>
+    <?php } ?>
+
+    <tr>
+        <td class="td_bg">Which dates will you be available for? : </td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->available_on_date; ?>
+        </td>
+    </tr>
+    <?php if(!is_null($table_record->activities_applying_for)){?>
+    <tr>
+        <td class="td_bg">Which activities are you applying for? : </td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->activities_applying_for; ?>
+        </td>
+    </tr>
+    <?php } ?>
+    <?php if ( $table_record->applying_position != "" ){?>
+
+    <tr>
+        <td class="td_bg">Which type of position are you applying for? : </td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->applying_position; ?>
+        </td>
+    </tr>
+
+    <?php }?>
+
+    <tr>
+        <td class="td_bg">Why do you want to go on this medical mission? : </td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->your_intention; ?>
+        </td>
+    </tr>
+    <?php if ( $table_record->stay_with_family != "" ){?>
+    <tr>
+        <td class="td_bg">Are you interested in staying with family (not participating in the medical mission)? : </td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->stay_with_family; ?>
+        </td>
+    </tr>
+    <?php } ?>
+    <tr>
+        <td class="td_bg">What languages can you speak that would be useful in this context? : </td>
+        <td colspan="2" class="td_bg">
+            <?php
+            $lang = unserialize($table_record->languages);
+            $i = 1;
+            foreach ($lang as $key => $value) {
+                if ($i > 1) {
+                    echo ', ';
+                }
+                echo $value;
+                if ($value == 'Other') {
+                    echo ": ( ".$table_record->other_language." )";
+                }
+                $i++;
+            } ?>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="td_bg">CV/Resume : </td>
+        <td colspan="2" class="td_bg">
+            <?php echo '<a href="' . site_url() . 'assets/files/arbaeen-mission/' . $table_record->cv_resume . '" style="font-weight:bold" download="download">click here</a> to download'; ?>
+        </td>
+    </tr>
+
+    <?php if ($table_record->extra_information != "") { ?>
+
+    <tr>
+        <td class="td_bg">Please include any other details you would like to share or include any questions you have here : </td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->extra_information; ?>
+        </td>
+    </tr>
+
+    <?php 
+} ?>
+
+    <tr>
+        <td class="td_bg">I am an active, dues-paying IMI member and will coordinate my travel with the group plans to arrive on the appointed days : </td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->agree_active_paying_member; ?>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="td_bg">I agree to strictly adhere to ALL IMI protocols and guidelines (ranging from infection control to IMI governance)</td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->agree_commit_adhering_imi_governance; ?>
+        </td>
+    </tr>
+    <?php if(!is_null($table_record->agree_covid19_risk)){?>
+    <tr>
+        <td class="td_bg">I understand that this medical mission, despite all precautions and risk mitigation protocols by IMI, includes an assumption of risk of contracting COVID 19.</td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->agree_covid19_risk; ?>
+        </td>
+    </tr>
+    <?php } ?>
+    <tr>
+        <td class="td_bg">I understand that this is a general medical camp—i.e. the majority of cases include flu, body aches, sores, contraceptive needs, etc. and is not extremely specialized. In some instances, as needed, specialists MAY be called on to perform services at hospitals but that is NOT the core of work : </td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->agree_general_medical_camp; ?>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="td_bg">I will work diligently at my placement location and understand that this mission is an intense work experience : </td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->agree_work_diligently; ?>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="td_bg">I will work with professionalism which includes appropriate well mannered engagement with ALL staff, volunteers and patients as well as being on time for my shift : </td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->agree_work_with_professionalism; ?>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="td_bg">I will work as required including additional shifts or responsibilities that may arise due to changes on the ground : </td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->agree_additional_shifts; ?>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="td_bg">I understand that all delegates represent IMI in the field however, I do not have the authority to make assurances of any additional plans/work on behalf of IMI (unless specifically discussed) : </td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->agree_represent_imi_in_the_field; ?>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="td_bg">I understand that any future activities resulting from the my time in Iraq and/or involvement in the mission or with IMI, must be reported to IMI (via IMI HQ) to be coordinated through the relevant body in IMI (as directed in further communication) : </td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->agree_activity_reported_to_imi; ?>
+        </td>
+    </tr>
+    <?php if(!is_null($table_record->agree_medical_camp)){?>
+    <tr>
+        <td class="td_bg">I understand that this is a medical mission and not a ziyarat group</td>
+        <td colspan="2" class="td_bg">
+            <?php echo $table_record->agree_medical_camp; ?>
+        </td>
+    </tr>
+    <?php } ?>
+    <tr>
+        <td class="td_bg">Digital Signature : </td>
+        <td colspan="2" class="td_bg">
+            <?php echo '<a href="' . site_url() . 'assets/files/arbaeen-mission/' . $table_record->signature . '" style="font-weight:bold" download="download">click here</a> to download'; ?>
+        </td>
+    </tr>
+    <tr>
+        <td class="td_bg">Status : </td>
+        <td colspan="2" class="td_bg">
+            <?php
+            switch ($table_record->status) {
+                case 'pending':
+                    echo "Pending";
+                    break;
+                
+                case 'waitlist':
+                    echo "Waitlist";
+                    break;
+                
+                case 'reject':
+                    echo "Rejected";
+                    break;
+                
+                case 'approve':
+                    echo "Approved";
+                    break;
+                
+                case 'assigntointerviewer':
+                    echo "Assigned To Interviewer";
+                    break;
+                
+                default:
+                    break;
+            }
+            ?>
+        </td>
+    </tr>
+</table>
+<hr />
+<a class="btn btn-info btn-flat" style="margin-top:20px;" href="<?php echo site_url($_directory . "controls/view"); ?>">Go Back</a> 

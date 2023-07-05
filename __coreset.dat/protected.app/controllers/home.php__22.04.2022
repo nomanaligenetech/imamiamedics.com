@@ -1,0 +1,149 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+/**
+ * @property CI_Output output
+ */
+class Home extends C_frontend {
+
+	/**
+	 * Index Page for this controller.
+	 *
+	 * Maps to the following URL
+	 * 		http://example.com/index.php/welcome
+	 *	- or -  
+	 * 		http://example.com/index.php/welcome/index
+	 *	- or -
+	 * Since this controller is set as the default controller in 
+	 * config/routes.php, it's displayed at http://example.com/
+	 *
+	 * So any other public methods not prefixed with an underscore will
+	 * map to /index.php/welcome/<method_name>
+	 * @see http://codeigniter.com/user_guide/general/urls.html
+	 */
+	
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->helper('text');
+		
+		#$this->load->library('parser');
+		
+		
+		$this->data													= $this->default_data();
+		
+		#$this->data['_show_default_title']							= FALSE;
+		$this->data['_pagetitle']									= '';# "IMI's 8th International Conference: Research, International Development & Health Advancements";
+
+		$this->data['showThings']['_show_SLIDER']					= TRUE;	
+		$this->data['showThings']['_show_CONF_PARTNERS']			= TRUE;
+		
+		
+	}
+	
+	function testing_parser()
+	{
+		$this->load->library('testparser');
+		
+		
+		$data														= $this->data;		
+		
+		
+		$data['site_gallery']										= $this->queries->fetch_records('site_gallery', " AND status = '1' ") -> result_array();
+		
+		
+		
+		$data['_pageview']											= "frontend/home";		
+		
+		
+		$this->load->view( FRONTEND_TEMPLATE_HOME_VIEW, $data );	
+		#$this->testparser->parse('frontend/template/index', $data);
+		
+		
+	}
+	
+	
+	public function test_email()
+	{
+		/*$a = unserialize('a:10:{s:6:"userid";s:2:"13";s:12:"conferenceid";s:1:"2";s:26:"conference_registration_id";s:2:"14";s:11:"payer_email";s:27:"binyameen12-buyer@gmail.com";s:13:"payment_gross";s:6:"100.00";s:12:"ipn_track_id";s:13:"ac21a7c683032";s:8:"payer_id";s:13:"6NDQPYP4USQN2";s:14:"payment_status";s:9:"Completed";s:11:"paypal_post";s:1486:"a:41:{s:8:"mc_gross";s:6:"100.00";s:22:"protection_eligibility";s:8:"Eligible";s:14:"address_status";s:9:"confirmed";s:8:"payer_id";s:13:"6NDQPYP4USQN2";s:3:"tax";s:4:"0.00";s:14:"address_street";s:21:"123 West Hall, Indoze";s:12:"payment_date";s:25:"00:35:24 Dec 30, 2014 PST";s:14:"payment_status";s:9:"Completed";s:7:"charset";s:12:"windows-1252";s:11:"address_zip";s:5:"85323";s:10:"first_name";s:3:"Bin";s:6:"mc_fee";s:4:"3.20";s:20:"address_country_code";s:2:"US";s:12:"address_name";s:7:"QA TEAM";s:14:"notify_version";s:3:"3.8";s:6:"custom";s:0:"";s:12:"payer_status";s:8:"verified";s:8:"business";s:25:"binyameenseller@gmail.com";s:15:"address_country";s:13:"United States";s:12:"address_city";s:8:"Avondale";s:8:"quantity";s:1:"1";s:11:"verify_sign";s:56:"A9fCCdLpF7Un06UbWlPM2Kfly1-jAkO1qNrk2msyxCUCF9HMs-ldbDIc";s:11:"payer_email";s:27:"binyameen12-buyer@gmail.com";s:6:"txn_id";s:17:"5HX44217C2934743N";s:12:"payment_type";s:7:"instant";s:9:"last_name";s:5:"Buyer";s:13:"address_state";s:2:"AZ";s:14:"receiver_email";s:25:"binyameenseller@gmail.com";s:11:"payment_fee";s:4:"3.20";s:11:"receiver_id";s:13:"ZRPW28PALECH2";s:8:"txn_type";s:10:"web_accept";s:9:"item_name";s:12:"registration";s:11:"mc_currency";s:3:"USD";s:11:"item_number";s:2:"13";s:17:"residence_country";s:2:"US";s:8:"test_ipn";s:1:"1";s:15:"handling_amount";s:4:"0.00";s:19:"transaction_subject";s:0:"";s:13:"payment_gross";s:6:"100.00";s:8:"shipping";s:4:"0.00";s:12:"ipn_track_id";s:13:"ac21a7c683032";}";s:10:"date_added";s:19:"2014-12-30 09:35:54";} ');
+		
+		
+		$this->queries->SaveDeleteTables($a, 's', "tb_conference_payments", 'id'); 
+		
+		print_r( $a );die;
+		
+		$message 					= 'test ' .  print_r( $_POST );*/
+		
+		$message	= "abc";
+	
+	
+		#to_user
+		$email_template				= array("email_to"				=> 'sadiq.hussain@genetechsolutions.com',
+											"email_heading"			=> 'TEST',
+											"email_file"			=> "email/global/_blank_page.php",
+											"email_subject"			=> 'TESTT',
+											"email_post"			=> array("content"		=> $message) );
+		
+		$is_email_sent				= $this->_send_email( $email_template );
+	}
+
+    public function _404()
+    {
+        /*$this->output->set_status_header('404');
+
+        $data = $this->data;
+
+        $data['showThings']['_show_SLIDER'] = FALSE;
+        $data['showThings']['_show_CONF_PARTNERS'] = FALSE;
+
+
+        $data['_pagetitle'] = lang_line("text_404error");
+
+
+        $data['content'] = "<div align='center' style='margin:50px;'><img src='" . base_url('assets/frontend/images/404.png') . "' /></div>";
+        $data['_pageview'] = "global/_blank_page.php";
+		$this->load->view(FRONTEND_TEMPLATE_CENTER_WIDGETS_VIEW, $data);*/
+		show_404();
+    }
+	
+	public function index()
+	{ 
+		
+		$data														= $this->data;		
+		
+		
+		
+		$siteIdQuery												= getSiteId();
+		
+		$data['site_gallery']										= $this->queries->fetch_records('site_gallery', " AND status = '1' ".$siteIdQuery." ORDER BY SORT ");
+		
+		$data['timelinehistory']									= $this->queries->fetch_records('timelinehistory', " AND status = '1' ".$siteIdQuery." ORDER BY SORT ASC ");
+		$data['_js_timeline_history_count']							= $data['timelinehistory'] -> num_rows();
+		if ( $data['timelinehistory'] -> num_rows() > 4 )
+		{
+			$data['_js_timeline_history_count']						= 4;
+		}
+		
+		$data['centermenu']											= $this->queries->fetch_records('cmsmenu', 
+																									" 	AND (SELECT name FROM tb_cmsmenu_positions WHERE id = tb_cmsmenu.positionid) = '". MENUPOSITION_HEADER ."' 
+																										AND parentid = '". SessionHelper::_get_session("WHATWEDO_MENUID", "site_settings") ."'
+																										AND status = '1'");
+		
+		$data['wherewework']										= $this->queries->fetch_records('wherewework', " AND status = '1' ");
+		$data['wherewework']										= new CustomMySql($data['wherewework'], $this, 'wherewework', ['title','short_desc','full_desc']);
+		$data['eventslist'] = $this->queries->fetch_records('sitesectionswidgets', " 	AND start_date >= '". date("Y-m-d") ."' 
+													AND status = 1 
+													AND mode = '". SLUG_EVENTS ."' ORDER BY SORT LIMIT 5 ");
+					
+		if($data['eventslist']->num_rows() > 0){
+			$data['eventslist']											= new CustomMySql($data['eventslist'], $this, 'sitesectionswidgets', ['title', 'short_desc', 'full_desc']);
+			$data['eventslist']->row()->content = $data['eventslist']->row()->full_desc;
+		}
+		
+		
+		
+		$data['_pageview']											= "frontend/home.php";
+		
+		$this->load->view( FRONTEND_TEMPLATE_HOME_VIEW, $data );
+	}
+	
+}

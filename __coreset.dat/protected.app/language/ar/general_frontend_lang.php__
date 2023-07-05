@@ -1,0 +1,111 @@
+<?php
+$lang['heading_whatwedo'] = "الذي نفعله";
+$lang['heading_impacting_millions'] = "التأثير على الملايين على مستوى العالم";
+$lang['heading_our_story'] = "قصتنا";
+$lang['heading_get_involved'] = "شارك";
+
+$lang['heading_board_regents'] = "مجلس الحكام";
+$lang['heading_image_gallery'] = "معرض الصور";
+$lang['heading_feedback'] = "ردود الفعل";
+$lang['heading_donors'] = "المتبرعين";
+$lang['heading_updates'] = "التحديثات";
+
+$lang['heading_banner_savealife'] = "أنقذ حياة ، أنقذ البشرية";
+$lang['heading_banner_keepingalive'] = "الحفاظ على حياة الأفراد والفرص";
+
+$lang['button_login'] = "تسجيل الدخول";
+$lang['button_register'] = "تسجيل";
+$lang['button_forgot_your_password'] = "نسيت رقمك السري";
+$lang['button_forgot_password'] = "هل نسيت كلمة المرور";
+$lang['button_donthave_account'] = "ليس لديك حساب؟";
+$lang['button_click_here'] = "انقر هنا";
+$lang['button_signup_now'] = "أفتح حساب الأن";
+$lang['button_submit'] = "إرسال";
+
+$lang['button_view_more_feedback'] = "عرض المزيد من الملاحظات";
+$lang['button_view_more_donors'] = "عرض المزيد من المانحين";
+$lang['button_view_more_updates'] = "عرض المزيد من التحديثات";
+$lang['button_view_details'] = "عرض التفاصيل";
+$lang['button_joinnow'] = "نضم الان";
+$lang['button_supportus'] = "ادعمنا";
+$lang['button_donate'] = "تبرع";
+$lang['button_preview'] = "معاينة";
+$lang['button_send'] = "إرسال";
+$lang['button_donatenow'] = "تبرع الآن";
+$lang['button_getinvolved'] = "شارك";
+
+$lang['heading_goal'] = "هدف";
+$lang['heading_raised'] = "رفع";
+$lang['heading_share_this_cause'] = "شارك هذا السبب";
+
+// Donate page
+$lang['heading_give_now'] = "تبرع الان";
+$lang['heading_give_someone'] = "أعط تكريما لشخص ما";
+$lang['heading_ways_to_give'] = "طرق أخرى للتبرع";
+
+$lang['label_select_project'] = "حدد المشروع للتبرع";
+$lang['label_amount_to_donate'] = "مبلغ التبرع";
+$lang['label_marjaa_taqleed'] = "مرجع تقليد";
+$lang['label_one_or_recurring'] = "هل تريد أن تدفع مرة واحدة أم متكررة";
+$lang['label_donation_frequency'] = "عدد مرات التبرع";
+$lang['label_employer_match'] = "هل ترغب في أن يكون صاحب العمل مطابقًا؟";
+$lang['label_not_in_list'] = "ليس في القائمة ؟";
+$lang['label_emp_list'] = "قائمة أصحاب العمل";
+$lang['label_hide_identity'] = "هل تود إخفاء هويتك؟";
+$lang['label_add_comments'] = "أضف تعليقاتك (اختياري)";
+$lang['label_pay_paypal'] = "الدفع عبر Paypal";
+$lang['label_pay_card'] = "الدفع عن طريق بطاقة الائتمان";
+$lang['label_card_holder'] = "إسم صاحب البطاقة";
+$lang['label_card_no'] = "رقم البطاقة";
+$lang['label_card_expiry'] = "انتهاء صلاحية البطاقة";
+$lang['label_card_cvv'] = "رمز CVV للبطاقة";
+
+$lang['label_monthly'] = "شهريا";
+$lang['label_quarterly'] = "ربعي";
+$lang['label_halfyearly'] = "نصف سنوي";
+$lang['label_yearly'] = "سنوي";
+
+$lang['label_dedication_gift'] = "التفاني سنرسل بطاقة إلكترونية للاحتفال بذكرى هديتك";
+$lang['label_honoree_name'] = "شرف الاسم الكامل";
+$lang['label_honoree_email'] = "شرف البريد الإلكتروني";
+$lang['label_send_to_else'] = "أرسل إلى شخص آخر";
+$lang['label_receipeint_name'] = "الاسم الكامل للمستلم";
+$lang['label_receipeint_email'] = "البريد الإلكتروني للمستلم";
+$lang['label_from_name'] = "من الاسم";
+$lang['label_write_message'] = "اكتب رسالة (اختياري)";
+$lang['label_donate_amount'] = "التبرع بالمبلغ (بالدولار)";
+$lang['label_your_name'] = "اسمك";
+$lang['label_your_email'] = "بريدك الالكتروني";
+$lang['label_select_country'] = "حدد الدولة";
+$lang['label_onetime'] = "مره واحده";
+$lang['label_recuring'] = "متكرر";
+
+// Arbaeen Form
+$lang['label_arbaeen_form_name'] = "الاسم (كما يظهر في جواز سفرك)";
+$lang['label_arbaeen_form_DOB'] = "تاريخ الولادة";
+$lang['label_arbaeen_form_age'] = "Age";
+$lang['label_arbaeen_form_occupation'] = "عمر";
+$lang['label_arbaeen_form_speciality'] = "تخصص";
+$lang['label_arbaeen_form_email'] = "البريد الإلكتروني";
+$lang['label_arbaeen_form_email_note'] = "يرجى تقديم عنوان بريد إلكتروني (ستتحقق منه بانتظام)";
+$lang['label_arbaeen_form_phone'] = "رقم الهاتف";
+$lang['label_arbaeen_form_phone_note'] = "يرجى تضمين رمز البلد (على سبيل المثال الولايات المتحدة: +1 609802 0580)";
+$lang['label_arbaeen_form_address'] = "عنوان";
+$lang['label_arbaeen_form_biography'] = "يرجى كتابة سيرة ذاتية قصيرة (لا تزيد عن 300 كلمة) أدناه.";
+$lang['label_arbaeen_form_biography_note'] = "ستتم مشاركة السيرة الذاتية (تمامًا كما هو مكتوب) لتقديمها للجميع قبل الرحلة.";
+
+$lang['placeholder_password'] = "كلمه السر";
+$lang['placeholder_cpassword'] = "تأكيد كلمة المرور";
+
+$lang['placeholser_arbaeen_first_name'] = "أول";
+$lang['placeholser_arbaeen_middle_name'] = "الأوسط";
+$lang['placeholser_arbaeen_last_name'] = "الاخير";
+$lang['placeholder_arbaeen_form_street'] = "عنوان الشارع";
+$lang['placeholder_arbaeen_form_street_2'] = "سطر عنوان الشارع 2";
+$lang['placeholder_arbaeen_form_city'] = "مدينة";
+$lang['placeholder_arbaeen_form_region'] = "منطقة";
+$lang['placeholder_arbaeen_form_zipcode'] = "الرمز البريدي";
+
+// Dropdowns
+$lang['dropdown_sehm_childs'] = serialize(['Sehm e Imam'=> 'سحمي إمام' , 'Sehm e Sadat'=> 'سحمي السادات']);
+$lang['dropdown_syed_childs'] = serialize(['Syed'=> 'سيد' , 'Non Syed'=> 'غير سيد']);

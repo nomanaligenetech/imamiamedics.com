@@ -1,0 +1,339 @@
+<div style="font-size:13px;">
+    <?php $name = $email_post["first_name"] . ' ' . $email_post["middle_name"] . ' ' . $email_post["last_name"]; ?>
+    <p style=" <?php echo $emailTemplateHelper->styles("p"); ?> ">
+        <b><?php echo $name; ?></b> has submit an application for Arbaeen Medical Mission. Below are the details.
+    </p>
+
+    <br />
+
+    <p style=" <?php echo $emailTemplateHelper->styles("p"); ?> ">
+
+        <table border="0" style="width:100%;">
+            <tr>
+                <td>
+
+                    <div class="main" style="font-family:arial;text-align:left;">
+
+                        <table class="rooms_details" cellpadding="5" style="border:1px solid #c4c4c4; width:100%; font-size:12px;">
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">First Name: </td>
+                                <td><?php echo $email_post['first_name']; ?></td>
+                            </tr>
+
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">Middle Name: </td>
+                                <td><?php echo $email_post['middle_name']; ?></td>
+                            </tr>
+
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">Last Name: </td>
+                                <td><?php echo $email_post['last_name']; ?></td>
+                            </tr>
+                            <?php if(isset($email_post['gender']) && $email_post['gender'] != ""){?>
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">Gender: </td>
+                                <td><?php echo DropdownHelper::gender_dropdown(true, $email_post['gender']); ?></td>
+                            </tr>
+                            <?php } ?>
+
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">Email: </td>
+                                <td><?php echo $email_post['email']; ?></td>
+                            </tr>
+
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">Phone: </td>
+                                <td><?php echo $email_post['phone_number']; ?></td>
+                            </tr>
+
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">Date of Birth: </td>
+                                <td><?php echo $email_post['birth_date']; ?></td>
+                            </tr>
+                            <?php if (isset($email_post['age']) && $email_post['age'] > 0) { ?>
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">Age: </td>
+                                <td><?php echo $email_post['age']; ?></td>
+                            </tr>
+                            <?php } ?>
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">Occupation: </td>
+                                <td><?php echo $email_post['occupation']; ?></td>
+                            </tr>
+
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">Speciality: </td>
+                                <td><?php echo $email_post['speciality']; ?></td>
+                            </tr>
+
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">Street Address: </td>
+                                <td><?php echo $email_post['street_address']; ?></td>
+                            </tr>
+
+                            <?php if ($email_post['street_address_2'] != "") { ?>
+
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">Street Address 2: </td>
+                                <td><?php echo $email_post['street_address_2']; ?></td>
+                            </tr>
+
+                            <?php 
+                        } ?>
+
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">City: </td>
+                                <td><?php echo $email_post['city']; ?></td>
+                            </tr>
+
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">Region: </td>
+                                <td><?php echo $email_post['region']; ?></td>
+                            </tr>
+
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">Postal/Zip Code: </td>
+                                <td><?php echo $email_post['postal_code']; ?></td>
+                            </tr>
+
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">Country: </td>
+                                <td><?php echo $email_post['country']; ?></td>
+                            </tr>
+
+                            <?php if (isset($email_post['how_old']) && $email_post['how_old'] != "") { ?>
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF"><?php echo lang_line('label_arbaeen_form_how_old'); ?></td>
+                                <td><?php echo $email_post['how_old']; ?></td>
+                            </tr>
+                            <?php } ?>
+                            <?php if (isset($email_post['know_bmi']) && $email_post['know_bmi'] != "") { ?>
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">Do you know your BMI ?</td>
+                                <td><?php echo $email_post['know_bmi']; ?></td>
+                            </tr>
+                            <?php } ?>
+                            <?php if (isset($email_post['bmi']) && $email_post['bmi'] != "") { ?>
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">BMI (Body Mass Index) : </td>
+                                <td><?php echo $email_post['bmi']; ?></td>
+                            </tr>
+                            <?php } ?>
+                            <?php if (isset($email_post['smoking_hist']) && $email_post['smoking_hist'] != "") { ?>
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">Smoking History: </td>
+                                <td><?php echo $email_post['smoking_hist']; ?></td>
+                            </tr>
+                            <?php } ?>
+                            <?php if (isset($email_post['med_his']) && $email_post['med_his'] != "") { ?>
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">Do you have a history of taking or currently take any medications that affect your immune system, such as cortisone, prednisone or other steroids, anticancer drugs, or have you had any radiation treatments ?</td>
+                                <td><?php echo $email_post['med_his']; ?></td>
+                            </tr>
+                            <?php } ?>
+                            <?php if (isset($email_post['med_curr']) && $email_post['med_curr'] != "") { ?>
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">Are you taking any prescription medications currently ?</td>
+                                <td><?php echo $email_post['med_curr']; ?></td>
+                            </tr>
+                            <?php } ?>
+                            <?php if (isset($email_post['med_list']) && $email_post['med_list'] != "") { ?>
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">Please list the prescription medications you currently take: </td>
+                                <td><?php echo $email_post['med_list']; ?></td>
+                            </tr>
+                            <?php } ?>
+                            <?php if (isset($email_post['health_cond']) && $email_post['health_cond'] != "") { ?>
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">Health conditions. Please select all conditions that you have currently OR have had a history of: </td>
+                                <td><?php
+                                    $h_C = unserialize($email_post['health_cond']);
+                                    $i = 1;
+                                    foreach ($h_C as $key => $value) {
+                                        if ($i > 1) {
+                                            echo ', ';
+                                        }
+                                        echo $value;
+                                        if ($value == 'Other') {
+                                            echo ": ( ".$email_post['other_health_cond']." )";
+                                        }
+                                        $i++;
+                                    } ?></td>
+                            </tr>
+                            <?php } ?>
+                            <?php if (isset($email_post['type_covid19']) && $email_post['type_covid19'] != "") { ?>
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">Covid 19 Details: </td>
+                                <td><?php echo $email_post['type_covid19']; ?></td>
+                            </tr>
+                            <?php } ?>
+                            <?php if (isset($email_post['type_diabetes']) && $email_post['type_diabetes'] != "") { ?>
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">Diabetes Type: </td>
+                                <td><?php echo $email_post['type_diabetes']; ?></td>
+                            </tr>
+                            <?php } ?>
+                            <?php if (isset($email_post['type_heart_disease']) && $email_post['type_heart_disease'] != "") { ?>
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">Heart Diseases: </td>
+                                <td><?php 
+                                    $h_d = unserialize($email_post['type_heart_disease']);
+                                    $i = 1;
+                                    foreach ($h_d as $key => $value) {
+                                        if ($i > 1) {
+                                            echo ', ';
+                                        }
+                                        echo $value;
+                                        $i++;
+                                    } ?>
+                                </td>
+                            </tr>
+                            <?php } ?>
+                            <?php if (isset($email_post['health_his']) && $email_post['health_his'] != "") { ?>
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">Please include brief information below regarding any health history/current conditions (listed above or otherwise) AND your personal physical & mental fitness self-assessment: </td>
+                                <td><?php echo $email_post['health_his']; ?></td>
+                            </tr>
+                            <?php } ?>
+                            <?php if (isset($email_post['covid_vacc']) && $email_post['covid_vacc'] != "") { ?>
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">Have you been vaccinated against COVID-19 ?</td>
+                                <td><?php echo $email_post['covid_vacc']; ?></td>
+                            </tr>
+                            <?php } ?>
+                            <?php if (isset($email_post['covid_vacc_det']) && $email_post['covid_vacc_det'] != "") { ?>
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">COVID-19 Vaccination Details / Schedule / Reasons: </td>
+                                <td><?php echo $email_post['covid_vacc_det']; ?></td>
+                            </tr>
+                            <?php } ?>
+
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">Which dates will you be available for? : </td>
+                                <td><?php echo $email_post['available_on_date']; ?></td>
+                            </tr>
+                            <?php if (isset($email_post['activities_applying_for']) && $email_post['activities_applying_for'] != "") { ?>
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">Which activities are you applying for? : </td>
+                                <td><?php echo $email_post['activities_applying_for']; ?></td>
+                            </tr>
+                            <?php } ?>
+                            <?php if ($email_post['applying_position'] != "") { ?>
+
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">Which type of position are you applying for? : </td>
+                                <td><?php echo $email_post['applying_position']; ?></td>
+                            </tr>
+
+                            <?php }?>
+
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">Why do you want to go on this medical mission? : </td>
+                                <td><?php echo $email_post['your_intention']; ?></td>
+                            </tr>
+                            <?php if (isset($email_post['stay_with_family']) && $email_post['stay_with_family'] != "") { ?>
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">Are you interested in staying with family (not participating in the medical mission)? : </td>
+                                <td><?php echo $email_post['stay_with_family']; ?></td>
+                            </tr>
+                            <?php }?>
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">What languages can you speak that would be useful in this context? : </td>
+                                <td><?php
+                                    $lang = unserialize($email_post['languages']);
+                                    $i = 1;
+                                    foreach ($lang as $key => $value) {
+                                        if ($i > 1) {
+                                            echo ', ';
+                                        }
+                                        echo $value;
+                                        if ($value == 'Other') {
+                                            echo ": ( ".$email_post['other_language']." )";
+                                        }
+                                        $i++;
+                                    } ?></td>
+                            </tr>
+
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">CV/Resume : </td>
+                                <td><?php echo '<a href="' . site_url() . 'assets/files/arbaeen-mission/' . $email_post['cv_resume'] . '" style="font-weight:bold" download="download">click here</a> to download'; ?></td>
+                            </tr>
+
+                            <?php if ($email_post['extra_information'] != "") { ?>
+
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">Please include any other details you would like to share or include any questions you have here : </td>
+                                <td><?php echo $email_post['extra_information']; ?></td>
+                            </tr>
+
+                            <?php 
+                        } ?>
+
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">I am an active, dues-paying IMI member and will coordinate my travel with the group plans to arrive on the appointed days : </td>
+                                <td><?php echo $email_post['agree_active_paying_member']; ?></td>
+                            </tr>
+
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">I agree to strictly adhere to ALL IMI protocols and guidelines (ranging from infection control to IMI governance) : </td>
+                                <td><?php echo $email_post['agree_commit_adhering_imi_governance']; ?></td>
+                            </tr>
+                            <?php if(isset($email_post['agree_covid19_risk']) && $email_post['agree_covid19_risk'] != ""){?>
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">I understand that this medical mission, despite all precautions and risk mitigation protocols by IMI, includes an assumption of risk of contracting COVID 19 : </td>
+                                <td><?php echo $email_post['agree_covid19_risk']; ?></td>
+                            </tr>
+                            <?php } ?>
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">I understand that this is a general medical camp—i.e. the majority of cases include flu, body aches, sores, contraceptive needs, etc. and is not extremely specialized. In some instances, as needed, specialists MAY be called on to perform services at hospitals but that is NOT the core of work : </td>
+                                <td><?php echo $email_post['agree_general_medical_camp']; ?></td>
+                            </tr>
+
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">I will work diligently at my placement location and understand that this mission is an intense work experience : </td>
+                                <td><?php echo $email_post['agree_work_diligently']; ?></td>
+                            </tr>
+
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">I will work with professionalism which includes appropriate well mannered engagement with ALL staff, volunteers and patients as well as being on time for my shift : </td>
+                                <td><?php echo $email_post['agree_work_with_professionalism']; ?></td>
+                            </tr>
+
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">I will work as required including additional shifts or responsibilities that may arise due to changes on the ground : </td>
+                                <td><?php echo $email_post['agree_additional_shifts']; ?></td>
+                            </tr>
+
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">I understand that all delegates represent IMI in the field however, I do not have the authority to make assurances of any additional plans/work on behalf of IMI (unless specifically discussed) : </td>
+                                <td><?php echo $email_post['agree_represent_imi_in_the_field']; ?></td>
+                            </tr>
+
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">I understand that any future activities resulting from the my time in Iraq and/or involvement in the mission or with IMI, must be reported to IMI (via IMI HQ) to be coordinated through the relevant body in IMI (as directed in further communication) : </td>
+                                <td><?php echo $email_post['agree_activity_reported_to_imi']; ?></td>
+                            </tr>
+                            <?php if(isset($email_post['agree_medical_camp']) && $email_post['agree_medical_camp'] != ""){?>
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">I understand that this is a medical mission and not a ziyarat group : </td>
+                                <td><?php echo $email_post['agree_medical_camp']; ?></td>
+                            </tr>
+                            <?php } ?>
+                            <tr>
+                                <td height="20" colspan="2" align="left" valign="middle" bgcolor="#465056" class="heading" style="color: #FFF">Digital Signature : </td>
+                                <td><?php echo '<a href="' . site_url() . 'assets/files/arbaeen-mission/' . $email_post['signature'] . '" style="font-weight:bold" download="download">click here</a> to download'; ?></td>
+                            </tr>
+
+                        </table>
+
+                    </div>
+
+                </td>
+            </tr>
+
+        </table>
+
+    </p>
+
+
+</div> 

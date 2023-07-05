@@ -1,0 +1,309 @@
+<?php
+$package_id = 0;
+if ( $this->functions->validate_if_user_is_a_paid_member(
+                $user,
+                $is_membership_expired,
+                $is_membership_pending_approval,
+                $is_membership_rejected,
+                $membership_details
+) ){
+	$package_id = $membership_details['membership_package_id'];
+}
+?><div class="main_formPayment" style="text-align: left;">
+	<form class="form-horizontal bgAllform" action="<?php echo site_url('joinus/pay/');?>" method="post" name="membershipForm">
+
+		<fieldset>
+		
+        
+        <div class="bgAllform">
+
+		<?php 
+		if(isset($membership) != "")
+		{
+		?>
+			
+				<!-- nine column -->	
+			
+				<div class="row headingMid">
+					<h2 class="h2Style2 m_bot25">
+                    <b><?php echo lang_line('text_membership_type'); ?>-</b> <?php echo lang_line('text_membership_type_desc'); ?>
+                    
+                    <a href="<?php echo site_url(  "account/myprofile/controls/view"  ) ;?>">
+                    	<button type="button" class="btn btn-danger" style="float:right;"><?php echo lang_line('text_membership_skippaymentfornow'); ?></button>
+                    </a>
+                    
+                    </h2>
+				</div>
+
+				<!-- eighth column -->
+
+            <?php
+            foreach ($membership_packages_by_classification as $membership_package_classification => $membership_packages) {
+                ?>
+                <div class="flALlLeft">
+                    <div class="form-group">
+                        <label class="control-label h2Style2 paddLft"
+                               for="test strucrt"><?= $membership_package_classification ?> <?php echo lang_line('text_membership_membershipoptions'); ?></label>
+                    </div>
+
+                    <?php
+                    foreach ($membership_packages as $membership_package) {
+						$conference_prices_not_a_member_languages = $this->db_imiconf->query("SELECT * FROM tb_conference_prices_not_a_member_languages WHERE conference_prices_not_a_member_id = {$membership_package['id']}")->result_array();
+						replace_data_for_lang($membership_package, $content_languages, $conference_prices_not_a_member_languages, ['name'], SessionHelper::_get_session('LANG_CODE'));
+                        ?>
+                        <div class="form-group">
+                            <label class=" control-label" for="test strucrt"></label>
+                            <div class="col-md-12 bg_greyText">
+                                <label class="control-label">
+                                    <input
+                                            type="radio"
+                                            name="membership"
+                                            id="membership"
+                                            value="<?= $membership_package['id'] ?>"
+                                        <?php if ($membership == $membership_package['id'] || $package_id == $membership_package['id']) echo "checked"; ?>
+                                            required
+                                    />
+                                    <?= $membership_package['name'] ?>
+                                    $<?= number_format($membership_package['price'], 2) ?><?= ($membership_package['per'] != 'Life' ? (' per ' . $membership_package['per']) : '') ?>
+                                </label>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                    unset($membership_package);
+                    ?>
+                </div>
+                <?php
+            }
+            unset($membership_package_classification, $membership_packages);
+            ?>
+
+				<!-- twevelth column -->
+
+				<div class="flALlLeft">
+					<div class="form-group">
+						<label class="control-label" for="test strucrt"></label>  
+						<div class="col-md-6 ar-style">
+							<label class="h2Style2">
+								<?php echo lang_line('text_membership_wishtomakeadditionaltax'); ?>  
+							</label>
+                            <input
+                                    type="number"
+                                    class="form-control"
+                                    name="donation"
+                                    id="donation"
+									min="0"
+                                    placeholder=""
+                                    value="<?php echo set_value('donation'); ?>"
+                                    step="any"
+                            />
+							<span class="donation"><?php //echo form_error('donation');?></span>
+						</div>
+
+					</div>
+				</div>
+		<?php
+		}
+		else if($membership == "")
+		{
+            ~r(debug_backtrace());
+		?>
+				<!-- nine column -->	
+		   
+				<div class="row headingMid">
+					<h2 class="h2Style2 m_bot25"><b><?php echo lang_line('text_membership_type'); ?>-</b> <?php echo lang_line('text_membership_type_desc'); ?>
+                    
+                    <a href="<?php echo site_url(  "account/myprofile/controls/view"  ) ;?>">
+                    	<button type="button" class="btn btn-danger" style="float:right;"><?php echo lang_line('text_membership_skippaymentfornow'); ?></button>
+                    </a>
+                    </h2>
+				</div>
+
+				<!-- eighth column -->
+
+				<!-- ninth column -->
+
+				<div class="flALlLeft">
+                
+                		<div class="form-group">
+                            <label class="control-label h2Style2 paddLft" for="test strucrt">Life Membership Options</label>
+                        </div>
+                        
+                        
+                        <div class="form-group">
+                            <label class=" control-label" for="test strucrt"></label>  
+                            <div class="col-md-7 bg_greyText">
+                                <input type="radio" name="membership" id="membership" value="Life Membership ( MD, DO, PhD, Dentist )$1500.00" 
+                                checked="<?php if($membership=="Life Membership ( MD, DO, PhD, Dentist )$1500.00") echo "checked"; ?>" />
+							<label class="control-label">Life Membership ( MD, DO, PhD, Dentist ) $1500.00</label> 
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="form-group">
+                            <label class=" control-label" for="test strucrt"></label>  
+                            <div class="col-md-7 bg_greyText">
+                            	<input type="radio" name="membership" id="membership" value="Life Membership ( non-physician ) $750.00" 
+                                checked="<?php if($membership=="Life Membership ( non-physician ) $750.00") echo "checked"; ?>"/>
+								<label class="control-label">Life Membership ( non-physician ) $750.00</label> 
+                            </div>
+                        </div>
+
+				</div>
+				<!-- ninth column -->
+
+				<!-- tenth column -->
+
+				<div class="flALlLeft">
+
+					<div class="form-group">
+						<label class="control-label h2Style2 paddLft" for="test strucrt">Family Membership Options</label>
+					</div>
+
+					<div class="form-group">
+						<label class=" control-label" for="test strucrt"></label>  
+						<div class="col-md-7 bg_greyText">
+							<input type="radio" name="membership" id="membership" value="family with 2 Medical Professionals ( MD, DO, PhD, Dentist )$250.00/Y" checked="<?php if($membership=="family with 2 Medical Professionals ( MD, DO, PhD, Dentist )$250.00/Y") echo "checked"; ?>"/>
+							<label class="control-label ">Family with 2 Medical Professionals ( MD, DO, PhD, Dentist ) $250.00/Y</label> 
+						</div>
+					</div>
+
+
+
+					<div class="form-group">
+						<label class=" control-label" for="test strucrt"></label>  
+						<div class="col-md-7 bg_greyText">
+                            <input type="radio" name="membership" id="membership"
+                                   value="Family with 1 Medical Professional ( MD, DO, PhD, Dentist )$200.00/Y"
+                                   checked="<?php if ($membership == "Family with 1 Medical Professional ( MD, DO, PhD, Dentist )$200.00/Y") echo "checked"; ?>"/>
+                            <label class="control-label">Family with 1 Medical Professional ( MD, DO, PhD, Dentist )
+                                $200.00/Y</label>
+
+                        </div>
+					</div>
+
+					<div class="form-group">
+						<label class="control-label" for="test strucrt"></label>  
+						<div class="col-md-7 bg_greyText">
+							<input type="radio" name="membership" id="membership" value="family membership for non-healthcare profesionals( MD, DO, PhD, Dentist )$75.00/Y" checked="<?php if($membership=="family membership for non-healthcare profesionals( MD, DO, PhD, Dentist )$75.00/Y") echo "checked"; ?>"/>
+							<label class="control-label">Family membership for non-healthcare profesionals( MD, DO, PhD, Dentist ) $75.00/Y</label> 
+
+						</div>
+					</div>
+				</div>
+
+				<!-- tenth column -->
+
+
+				<!-- elventh column -->
+
+				<div class="flALlLeft">
+
+					<div class="form-group">
+						<label class=" control-label h2Style2 paddLft" for="test strucrt">Individual Membership Options </label>  
+					</div>
+					<div class="form-group">
+						<label class="control-label" for="test strucrt"></label>  
+						<div class="col-md-7 bg_greyText">
+							<input type="radio" name="membership" id="membership" value="Medical Professionals ( MD, DO, PhD, Dentist )$150.00/Y" checked="<?php if($membership=="Medical Professionals ( MD, DO, PhD, Dentist )$150.00/Y") echo "checked"; ?>" />
+							<label class="control-label">Medical Professionals ( MD, DO, PhD, Dentist ) $150.00/Y</label> 
+
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="control-label" for="test strucrt"></label>  
+						<div class="col-md-8 bg_greyText">
+							<input type="radio" name="membership" id="membership" value="Resident fellow/Alied heath professionl( Pharmacist, Nurse, Technician, etc )$75.00/Y" checked="<?php if($membership=="Resident fellow/Alied heath professionl( Pharmacist, Nurse, Technician, etc )$75.00/Y") echo "checked"; ?>" />
+							<label class="control-label">Resident fellow/Alied heath professionl( Pharmacist, Nurse, Technician, etc ) $75.00/Y</label> 
+
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="control-label" for="test strucrt"></label>  
+						<div class="col-md-7 bg_greyText">
+							<input type="radio" name="membership" id="membership" value="Associate Member(non-healthcare profesionals/Community Member)$25.00/Y"  checked="<?php if($membership=="Associate Member(non-healthcare profesionals/Community Member)$25.00/Y") echo "checked"; ?>" />
+							<label class="control-label">Associate Member(non-healthcare profesionals/Community Member) $25.00/Y</label> 
+
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="control-label" for="test strucrt"></label>  
+						<div class="col-md-7 bg_greyText">
+							<input type="radio" name="membership" id="membership" value="Student $25.00/Y"  checked="<?php if($membership=="Student $25.00/Y") echo "checked"; ?>" />
+							<label class="control-label">Student $25.00/Y</label> 
+
+						</div>
+						<span class="membership"><?php echo form_error('membership');?></span>
+					</div>
+				</div>
+				<!-- elventh column -->
+
+
+				<!-- twevelth column -->
+
+				<div class="flALlLeft">
+					<div class="form-group">
+						<label class="control-label" for="test strucrt"></label>  
+						<div class="col-md-6">
+							<label class="h2Style2">
+							<?php echo lang_line('text_membership_wishtomakeadditionaltax'); ?>  
+							</label>
+							<input type="text"  class="form-control" name="donation" id="donation" placeholder="" value="<?php echo set_value('donation');?>">
+							<span class="donation"><?php //echo form_error('donation');?></span>
+						</div>
+
+					</div>
+				</div>
+		<?php 
+        }
+        ?>
+        
+        
+        <div class="flALlLeft">
+            <div class="holdWrap_width holdWrap_width_AR">
+                <div class="row midd_Heading">
+                    <h2 class="h2Style2 m_bot25 paddLft" ><?php echo lang_line('text_paymenttype'); ?></h2>
+                </div>  
+
+                <div class="form-group floatmin row">
+                	<?php
+					/*
+                    <div class="col-md-3 margRgt">
+                        <input type="radio" name="payment-type" id="payment-type" value="Visa" />
+                        <label class="control-label allPayimg"></label> 
+                    </div>
+                    <div class="col-md-3 margRgt">
+                        <input type="radio" name="payment-type" id="payment-type" value="MasterCard" />
+                        <label class="control-label allPayimgsec"></label> 
+                    </div>
+                    <div class="col-md-3 margRgt">
+                        <input type="radio" name="payment-type" id="payment-type" value="Amex" />
+                        <label class="control-label allPayimgth"></label> 
+                    </div>
+					*/
+					?>
+                    <div class="col-md-12 margRgt">
+                        <input type="radio" name="payment-type" id="payment-type" value="paypal" checked="checked" />
+                        <label class="control-label allPayimgfi"></label> 
+                    </div>
+                    
+                </div>
+            </div>
+            <span class="payment-type"><?php echo form_error('payment-type'); ?></span>
+        </div>
+    
+        <div class="flALlLeft">
+
+            <div class="col-md-2 col-md-2_AR">
+                <button id="submit" class="btn btn-primary"><?php echo lang_line('text_membership_pay'); ?></button>
+            </div>
+        </div>
+        
+        </div>
+                        
+		</fieldset>
+	</form>
+</div>

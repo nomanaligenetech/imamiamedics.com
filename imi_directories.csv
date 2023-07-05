@@ -1,0 +1,212 @@
+1,CSV Imports,CSV Imports,,csvimport,0,1
+2,CSV Member Data,CSV Member Data,csvmemberdata/controls/view,csvmemberdata,1,1
+3,CSV Member Data,View,csvmemberdata/controls/view,csvmemberdataview,2,0
+4,Add,Add,csvmemberdata/controls/add,csvmemberdataadd,2,0
+5,Save,Save,csvmemberdata/controls/save,csvmemberdatasave,2,0
+6,Truncate,Truncate,csvmemberdata/controls/truncate,csvmemberdatatruncate,2,0
+7,Setups,Setups,,setups,0,1
+8,Manage Site Banners,Manage Site Banners,managesitebanners/controls/view,managesitebanners,7,1
+9,Manage Site Banners,View,managesitebanners/controls/view,managesitebannersview,8,0
+10,Add,Add,managesitebanners/controls/add,managesitebannersadd,8,0
+11,Edit,Edit,managesitebanners/controls/edit,managesitebannersedit,8,0
+12,Save,Save,managesitebanners/controls/save,managesitebannerssave,8,0
+13,Options,Options,managesitebanners/controls/options,managesitebannersoptions,8,0
+14,Delete,Delete,managesitebanners/controls/delete,managesitebannersdelete,13,0
+15,Update Sorting,Update Sorting,managesitebanners/controls/ajax_update_sorting,managesitebannersupdatesorting,13,0
+16,Manage Admin Users,Manage Admin Users,manageadmins/controls/view,manageadmins,7,1
+17,Manage Admin Users,View,manageadmins/controls/view,manageadminsview,16,0
+18,Add,Add,manageadmins/controls/add,manageadminsadd,16,0
+19,Edit,Edit,manageadmins/controls/edit,manageadminsedit,16,0
+20,Save,Save,manageadmins/controls/save,manageadminssave,16,0
+21,Options,Options,manageadmins/controls/options,manageadminsoptions,16,0
+22,Delete,Delete,manageadmins/controls/delete,manageadminsdelete,21,0
+23,Manage Admin Roles,Manage Admin Roles,manageadminroles/controls/view,manageadminroles,7,1
+24,Manage Admin Roles,View,manageadminroles/controls/view,manageadminrolesview,23,0
+25,Add,Add,manageadminroles/controls/add,manageadminrolesadd,23,0
+26,Edit,Edit,manageadminroles/controls/edit,manageadminrolesedit,23,0
+27,Save,Save,manageadminroles/controls/save,manageadminrolessave,23,0
+28,Options,Options,manageadminroles/controls/options,manageadminrolesoptions,23,0
+29,Delete,Delete,manageadminroles/controls/delete,manageadminrolesdelete,28,0
+30,Manage Admin Role Permissions,Manage Admin Role Permissions,manageadminrolepermissions/controls/edit,manageadminrolepermissions,7,1
+31,Manage Admin Role Permissions,Manage Admin Role Permissions,manageadminrolepermissions/controls/edit,manageadminrolepermissionsedit,30,0
+32,Save,Save,manageadminrolepermissions/controls/save,manageadminrolepermissionssave,30,0
+33,Manage Users,Manage Users,manageusers/controls/view,manageusers,7,1
+34,Manage Users,View,manageusers/controls/view,manageusersview,33,0
+35,Add,Add,manageusers/controls/add,manageusersadd,33,0
+36,Edit,Edit,manageusers/controls/edit,manageusersedit,33,0
+37,Save,Save,manageusers/controls/save,manageuserssave,33,0
+38,Change Member Status,Change Member Status,manageusers/controls/togglememberstatus,manageusersstatus,33,0
+39,Change Paid Member Status,Change Paid Member Status,manageusers/controls/changepaidmembershipstatus,manageuserspaidstatus,33,0
+40,Options,Options,manageusers/controls/options,manageusersoptions,33,0
+41,Delete,Delete,manageusers/controls/delete,manageusersdelete,40,0
+42,Manage Cms Menus,Manage Cms Menus,managecmsmenus/controls/view,managecmsmenus,7,1
+43,Manage Cms Menus,View,managecmsmenus/controls/view,managecmsmenusview,42,0
+44,Add,Add,managecmsmenus/controls/add,managecmsmenusadd,42,0
+45,Edit,Edit,managecmsmenus/controls/edit,managecmsmenusedit,42,0
+46,Save,Save,managecmsmenus/controls/save,managecmsmenussave,42,0
+47,Options,Options,managecmsmenus/controls/options,managecmsmenusoptions,42,0
+48,Delete,Delete,managecmsmenus/controls/delete,managecmsmenusdelete,47,0
+49,Update Sorting,Update Sorting,managecmsmenus/controls/ajax_update_sorting,managecmsmenusupdatesorting,47,0
+50,Manage Cms Content,Manage Cms Content,managecmscontent/controls/view,managecmscontent,7,1
+51,Manage Cms Content,View,managecmscontent/controls/view,managecmscontentview,50,0
+52,Add,Add,managecmscontent/controls/add,managecmscontentadd,50,0
+53,Edit,Edit,managecmscontent/controls/edit,managecmscontentedit,50,0
+54,Save,Save,managecmscontent/controls/save,managecmscontentsave,50,0
+55,Options,Options,managecmscontent/controls/options,managecmscontentoptions,50,0
+56,Delete,Delete,managecmscontent/controls/delete,managecmscontentdelete,55,0
+57,Manage Timeline History,Manage Timeline History,managetimelinehistory/controls/view,managetimelinehistory,7,1
+58,Manage Timeline History,View,managetimelinehistory/controls/view,managetimelinehistoryview,57,0
+59,Add,Add,managetimelinehistory/controls/add,managetimelinehistoryadd,57,0
+60,Edit,Edit,managetimelinehistory/controls/edit,managetimelinehistoryedit,57,0
+61,Save,Save,managetimelinehistory/controls/save,managetimelinehistorysave,57,0
+62,Options,Options,managetimelinehistory/controls/options,managetimelinehistoryoptions,57,0
+63,Delete,Delete,managetimelinehistory/controls/delete,managetimelinehistorydelete,62,0
+64,Update Sorting,Update Sorting,managetimelinehistory/controls/ajax_update_sorting,managetimelinehistoryupdatesorting,62,0
+65,Manage Where We Work,Manage Where We Work,managewherewework/controls/view,managewherewework,7,1
+66,Manage Where We Work,View,managewherewework/controls/view,managewhereweworkview,65,0
+67,Add,Add,managewherewework/controls/add,managewhereweworkadd,65,0
+68,Edit,Edit,managewherewework/controls/edit,managewhereweworkedit,65,0
+69,Save,Save,managewherewework/controls/save,managewhereweworksave,65,0
+70,Manage Events / Articles,Manage Events / Articles,managesitesectionswidgets/controls/view,managesitesectionswidgets,7,1
+71,Manage Events / Articles,View,managesitesectionswidgets/controls/view,managesitesectionswidgetsview,70,0
+72,Add,Add,managesitesectionswidgets/controls/add,managesitesectionswidgetsadd,70,0
+73,Edit,Edit,managesitesectionswidgets/controls/edit,managesitesectionswidgetsedit,70,0
+74,Save,Save,managesitesectionswidgets/controls/save,managesitesectionswidgetssave,70,0
+75,Options,Options,managesitesectionswidgets/controls/options,managesitesectionswidgetsoptions,70,0
+76,Delete,Delete,managesitesectionswidgets/controls/delete,managesitesectionswidgetsdelete,75,0
+77,Update Sorting,Update Sorting,managesitesectionswidgets/controls/ajax_update_sorting,managesitesectionswidgetsupdatesorting,75,0
+78,Widgets,Widgets,,widgets,0,1
+79,Manage Testimonials,Manage Testimonials,managetestimonials/controls/view,managetestimonials,78,1
+80,Manage Testimonials,View,managetestimonials/controls/view,managetestimonialsview,79,0
+81,Add,Add,managetestimonials/controls/add,managetestimonialsadd,79,0
+82,Edit,Edit,managetestimonials/controls/edit,managetestimonialsedit,79,0
+83,Save,Save,managetestimonials/controls/save,managetestimonialssave,79,0
+84,Options,Options,managetestimonials/controls/options,managetestimonialsoptions,79,0
+85,Delete,Delete,managetestimonials/controls/delete,managetestimonialsdelete,84,0
+86,Update Sorting,Update Sorting,managetestimonials/controls/ajax_update_sorting,managetestimonialsupdatesorting,84,0
+87,Donation,Donation,,donation,0,1
+88,Manage Donation Projects,Manage Donation Projects,managedonationprojects/controls/view,managedonationprojects,87,1
+89,Manage Donation Projects,View,managedonationprojects/controls/view,managedonationprojectsview,88,0
+90,Add,Add,managedonationprojects/controls/add,managedonationprojectsadd,88,0
+91,Edit,Edit,managedonationprojects/controls/edit,managedonationprojectsedit,88,0
+92,Save,Save,managedonationprojects/controls/save,managedonationprojectssave,88,0
+93,Options,Options,managedonationprojects/controls/options,managedonationprojectsoptions,88,0
+94,Delete,Delete,managedonationprojects/controls/delete,managedonationprojectsdelete,93,0
+95,Update Sorting,Update Sorting,managedonationprojects/controls/ajax_update_sorting,managedonationprojectsupdatesorting,93,0
+96,View Donation,View Donation,viewdonation/controls/view,viewdonation,87,1
+97,View Donation,View,viewdonation/controls/view,viewdonationview,96,0
+98,Delete,Delete,viewdonation/controls/delete,viewdonationdelete,96,0
+99,Options,Options,viewdonation/controls/options,viewdonationoptions,96,0
+100,Delete,Delete,viewdonation/controls/delete,viewdonationdelete,99,0
+101,Donation Request On Will,Donation Request On Will,managedonationgiveonwill/controls/view,managedonationgiveonwill,87,1
+102,Donation Request On Will,View,managedonationgiveonwill/controls/view,managedonationgiveonwillview,101,0
+103,Add,Add,managedonationgiveonwill/controls/add,managedonationgiveonwilladd,101,0
+104,Edit,Edit,managedonationgiveonwill/controls/edit,managedonationgiveonwilledit,101,0
+105,Save,Save,managedonationgiveonwill/controls/save,managedonationgiveonwillsave,101,0
+106,Options,Options,managedonationgiveonwill/controls/options,managedonationgiveonwiloptions,101,0
+107,Delete,Delete,managedonationgiveonwill/controls/delete,managedonationgiveonwildelete,106,0
+108,Our Chapters,Our chapters,,ourchapters,0,1
+109,Manage Chapter Locations,Manage Chapter Locations,managechapterlocation/controls/view,managechapterlocation,108,1
+110,Manage Chapter Locations,View,managechapterlocation/controls/view,managechapterlocationview,109,0
+111,Add,Add,managechapterlocation/controls/add,managechapterlocationadd,110,0
+112,Edit,Edit,managechapterlocation/controls/edit,managechapterlocationedit,111,0
+113,Save,Save,managechapterlocation/controls/save,managechapterlocationsave,112,0
+114,Options,Options,managechapterlocation/controls/options,managechapterlocationoptions,113,0
+115,Delete,Delete,managechapterlocation/controls/delete,managechapterlocationdelete,114,0
+116,Update Sorting,Update Sorting,managechapterlocation/controls/ajax_update_sorting,managechapterlocationupdatesorting,114,0
+117,Manage Chapter Persons,Manage Chapter Persons,managechapterpersons/controls/view,managechapterpersons,108,1
+118,Manage Chapter Persons,View,managechapterpersons/controls/view,managechapterpersonsview,117,0
+119,Add,Add,managechapterpersons/controls/add,managechapterpersonsadd,117,0
+120,Edit,Edit,managechapterpersons/controls/edit,managechapterpersonsedit,117,0
+121,Save,Save,managechapterpersons/controls/save,managechapterpersonssave,117,0
+122,Options,Options,managechapterpersons/controls/options,managechapterpersonsoptions,117,0
+123,Delete,Delete,managechapterpersons/controls/delete,managechapterpersonsdelete,122,0
+124,Update Sorting,Update Sorting,managechapterpersons/controls/ajax_update_sorting,managechapterpersonsupdatesorting,122,0
+125,Manage Chapter Persons (Boards),Manage Chapter Persons (Boards),managechapterpersonsboards/controls/view,managechapterpersonsboards,108,1
+126,Manage Chapter Persons (Boards),View,managechapterpersonsboards/controls/view,managechapterpersonsboardsview,125,0
+127,Add,Add,managechapterpersonsboards/controls/add,managechapterpersonsboardsadd,125,0
+128,Edit,Edit,managechapterpersonsboards/controls/edit,managechapterpersonsboardsedit,125,0
+129,Save,Save,managechapterpersonsboards/controls/save,managechapterpersonsboardssave,125,0
+130,Options,Options,managechapterpersonsboards/controls/options,managechapterpersonsboardsoptions,125,0
+131,Delete,Delete,managechapterpersonsboards/controls/delete,managechapterpersonsboardsdelete,130,0
+132,Update Sorting,Update Sorting,managechapterpersonsboards/controls/ajax_update_sorting,managechapterpersonsboardsupdatesorting,130,0
+133,Manage Chapter Persons (Designation),Manage Chapter Persons (Designation),managechapterpersonsdesignation/controls/view,managechapterpersonsdesignation,108,1
+134,Manage Chapter Persons (Designation),View,managechapterpersonsdesignation/controls/view,managechapterpersonsdesignationview,133,0
+135,Add,Add,managechapterpersonsdesignation/controls/add,managechapterpersonsdesignationadd,133,0
+136,Edit,Edit,managechapterpersonsdesignation/controls/edit,managechapterpersonsdesignationedit,133,0
+137,Save,Save,managechapterpersonsdesignation/controls/save,managechapterpersonsdesignationsave,133,0
+138,Options,Options,managechapterpersonsdesignation/controls/options,managechapterpersonsdesignationoptions,133,0
+139,Delete,Delete,managechapterpersonsdesignation/controls/delete,managechapterpersonsdesignationdelete,138,0
+140,Update Sorting,Update Sorting,managechapterpersonsdesignation/controls/ajax_update_sorting,managechapterpersonsdesignationupdatesorting,138,0
+141,Forum,Forum,,forum,0,1
+142,Manage Category Type,Manage Category Type,managecategorytype/controls/view,managecategorytype,141,1
+143,Manage Category Type,View,managecategorytype/controls/view,managecategorytypeview,142,0
+144,Add,Add,managecategorytype/controls/add,managecategorytypeadd,142,0
+145,Edit,Edit,managecategorytype/controls/edit,managecategorytypeedit,142,0
+146,Save,Save,managecategorytype/controls/save,managecategorytypesave,142,0
+147,Options,Options,managecategorytype/controls/options,managecategorytypeoptions,142,0
+148,Delete,Delete,managecategorytype/controls/delete,managecategorytypedelete,147,0
+149,Manage Category,Manage Category,managecategory/controls/view,managecategory,141,1
+150,Manage Category,View,managecategory/controls/view,managecategoryview,149,0
+151,Add,Add,managecategory/controls/add,managecategoryadd,149,0
+152,Edit,Edit,managecategory/controls/edit,managecategoryedit,149,0
+153,Save,Save,managecategory/controls/save,managecategorysave,149,0
+154,Options,Options,managecategory/controls/options,managecategoryoptions,149,0
+155,Delete,Delete,managecategory/controls/delete,managecategorydelete,154,0
+156,Update Sorting,Update Sorting,managecategory/controls/ajax_update_sorting,managecategoryupdatesorting,154,0
+157,Manage Forum,Manage Forum,manageforum/controls/view,manageforum,141,1
+158,Manage Forum,View,manageforum/controls/view,manageforumview,157,0
+159,Add,Add,manageforum/controls/add,manageforumadd,157,0
+160,Edit,Edit,manageforum/controls/edit,manageforumedit,157,0
+161,Save,Save,manageforum/controls/save,manageforumsave,157,0
+162,Options,Options,manageforum/controls/options,manageforumoptions,157,0
+163,Delete,Delete,manageforum/controls/delete,manageforumdelete,162,0
+164,Manage Forum Topics,Manage Forum Topics,manageforumtopics/controls/view,manageforumtopics,141,1
+165,Manage Forum Topics,View,manageforumtopics/controls/view,manageforumtopicsview,164,0
+166,Add,Add,manageforumtopics/controls/add,manageforumtopicsadd,164,0
+167,Edit,Edit,manageforumtopics/controls/edit,manageforumtopicsedit,164,0
+168,Save,Save,manageforumtopics/controls/save,manageforumtopicssave,164,0
+169,Options,Options,manageforumtopics/controls/options,manageforumtopicsoptions,164,0
+170,Delete,Delete,manageforumtopics/controls/delete,manageforumtopicsdelete,169,0
+171,Manage Posts,Manage Posts,manageposts/controls/view,manageposts,141,1
+172,Manage Posts,View,manageposts/controls/view,managepostsview,171,0
+173,Add,Add,manageposts/controls/add,managepostsadd,171,0
+174,Edit,Edit,manageposts/controls/edit,managepostsedit,171,0
+175,Save,Save,manageposts/controls/save,managepostssave,171,0
+176,Options,Options,manageposts/controls/options,managepostsoptions,171,0
+177,Delete,Delete,manageposts/controls/delete,managepostsdelete,176,0
+178,Manage Comments,Manage Comments,managecomments/controls/view,managecomments,141,1
+179,Manage Comments,View,managecomments/controls/view,managecommentsview,178,0
+180,Edit,Edit,managecomments/controls/edit,managecommentsaedit,178,0
+181,Save,Save,managecomments/controls/save,managecommentsasave,178,0
+182,Options,Options,managecomments/controls/options,managecommentsoptions,178,0
+183,Delete,Delete,managecomments/controls/delete,managecommentsdelete,182,0
+184,View Who Join Events,View Who Join Events,,viewwhojoinevents,0,1
+185,Who Join Events,Who Join Events,whojoinevents/controls/view,whojoinevents,184,1
+186,Who Join Events,View,whojoinevents/controls/view,whojoineventsview,185,0
+187,Options,Options,whojoinevents/controls/options,whojoineventsoptions,185,0
+188,Press Release,Press Release,,pressrelease,0,1
+189,Manage Press Release,Manage Press Release,managepressrelease/controls/view,managepressrelease,188,1
+190,Manage Press Release,View,managepressrelease/controls/view,managepressreleaseview,189,0
+191,Add,Add,managepressrelease/controls/add,managepressreleaseadd,189,0
+192,Edit,Edit,managepressrelease/controls/edit,managepressreleaseedit,189,0
+193,Save,Save,managepressrelease/controls/save,managepressreleasesave,189,0
+194,Options,Options,managepressrelease/controls/options,managepressreleaseoptions,189,0
+195,Delete,Delete,managepressrelease/controls/delete,managepressreleasedelete,194,0
+196,News,News,,news,0,1
+197,Manage News,Manage News,managenews/controls/view,managenews,196,1
+198,Manage News,View,managenews/controls/view,managenewsview,197,0
+199,Add,Add,managenews/controls/add,managenewsadd,197,0
+200,Edit,Edit,managenews/controls/edit,managenewsedit,197,0
+201,Save,Save,managenews/controls/save,managenewssave,197,0
+202,Options,Options,managenews/controls/options,managenewsoptions,197,0
+203,Delete,Delete,managenews/controls/delete,managenewsdelete,202,0
+204,Tools / Settings,Tools / Settings,,toolssettings,0,1
+205,Manage My Account,Manage My Account,managemyaccount/controls/view,managemyaccount,204,1
+206,Manage My Account,View,managemyaccount/controls/view,managemyaccountview,205,0
+207,Edit,Edit,managemyaccount/controls/edit,managemyaccountedit,205,0
+208,Save,Save,managemyaccount/controls/save,managemyaccountsave,205,0
+209,Manage Site Settings,Manage Site Settings,managesitesettings/controls/view,managesitesettings,204,1
+210,Manage Site Settings,View,managesitesettings/controls/view,managesitesettingsview,209,0
+211,Edit,Edit,managesitesettings/controls/edit,managesitesettingsedit,209,0
+212,Save,Save,managesitesettings/controls/save,managesitesettingssave,209,0

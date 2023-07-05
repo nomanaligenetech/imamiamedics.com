@@ -1,0 +1,298 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+/**
+ * @property MY_Session session
+ * @property Payment payment
+ * @property Imiconf_Queries imiconf_queries
+ * @property CI_DB_mysqli_driver db_imiconf
+ * @property CI_DB_mysqli_driver db
+ * @property CI_Loader load
+ * @property CI_Config config
+ */
+class Donation_Campaigns extends C_frontend {
+
+	/**
+	 * Index Page for this controller.
+	 *
+	 * Maps to the following URL
+	 * 		http://example.com/index.php/welcome
+     *    - or -
+	 * 		http://example.com/index.php/welcome/index
+	 *	- or -
+     * Since this controller is set as the default controller in
+	 * config/routes.php, it's displayed at http://example.com/
+	 *
+	 * So any other public methods not prefixed with an underscore will
+	 * map to /index.php/welcome/<method_name>
+	 * @see http://codeigniter.com/user_guide/general/urls.html
+	 */
+
+
+    private $userid					= "";
+
+
+    public function __construct()
+    {
+        parent::__construct();
+
+
+        // if (!$this->session->userdata('user_logged_in')) {
+        //     if ($this->router->method != 'payment_notify') { // PayPal IPN notifications don't have a session with the user logged in.
+        //         $this->_auth_login(false);
+        //     }
+        // }
+
+		$this->data													= $this->default_data();
+		$this->data['_pageview']									= "frontend/donation_campaigns/list.php";
+
+    }
+
+
+	public function show( $slug = null )
+    {
+
+		$data								= $this->data;
+		
+		$data['menu_detail']				= $this->queries->fetch_records('cmsmenu', " AND slug = 'donation-campaigns' AND status = '1'");
+
+		if ( $data['menu_detail'] -> num_rows() <= 0 )
+		{
+			show_404();
+		}
+		
+		$data['menu_active']					= $data['menu_detail']->row("name");
+		$data['_pagetitle']						= $data['menu_detail']->row("subheading");
+
+		if($slug != null){
+			$where = " AND status=1 AND slug = '$slug' ";
+			
+			$data['_pageview'] = "frontend/donation_campaigns/details.php";
+
+			$campaigns_list						= $this->queries->fetch_records("donation_campaigns", $where, '', $limit, $offset)->result_array();
+	
+			$data['campaigns_list'] 			= $this->refactorCampaign($campaigns_list);
+
+			$data['_is_breadcrumbs']			= $this->breadcrumbs( $data['menu_detail']->row("id"), $data['campaigns_list'][0] );
+		} else {
+
+			$data['_is_breadcrumbs']			= $this->breadcrumbs( $data['menu_detail']->row("id") );
+		}
+
+		
+		$this->load->view( FRONTEND_TEMPLATE_CENTER_WIDGETS_VIEW, $data );	
+	}
+
+	private function refactorCampaign($campaigns_list)
+	{
+		foreach ($campaigns_list as $key => &$campaign) {
+			if($campaign['id'] == "2"){
+				$campaign['donation_amount'] = 1050000;
+			} else {
+				$donation_data		= $this->queries->fetch_records("who_donate", " AND donation_projects_id = '". $campaign['donation_project_id'] ."' AND is_paid = 1 ")-> result_array();
+				foreach ($donation_data as $k => $donation) {
+					//$campaign['country_code']	= $this->queries->fetch_records("countries", " AND id={$donation['home_country']}")->row('countries_iso_code_2');
+					$campaign['donation_amount']	+= $donation['donate_amount'];
+					if($donation['donation_mode'] == "recurring"){
+						if($donation['num_of_recurring'] > 0){
+							$payments = $this->db->query("SELECT dcp.amount FROM tb_donation_payments dp INNER JOIN `tb_card_payments` dcp ON dp.id = dcp.payment_id WHERE dp.table_id_value = ".$donation['id']." AND dp.table_name = 'tb_donation_form' AND dp.payment_mode = 'payeezy' AND dcp.is_cron = 1 AND dcp.transaction_id != '' AND dcp.sequence_no != 0")->result_array();
+							foreach($payments as $payment) {
+								$campaign['donation_amount']	+= $payment['amount'];
+							}
+						}
+					}
+				}
+	
+				$camp_data			= $this->queries->fetch_records("dc_offline_donation", " AND camp_id = '". $campaign['id'] ."' AND status = 1 ")-> result_array();
+				foreach ($camp_data as $k => $donation) {
+					$campaign['donation_amount']	+= $donation['donate_amount'];
+				}
+			}
+
+			$campaign['goal_amount']			= number_format($campaign['goal_amount'], 0, '.', ',');
+			$campaign['donation_amount']		= number_format($campaign['donation_amount'], 0, '.', ',');
+			$campaign['campaign_gallery']		= $this->queries->fetch_records("donation_campaigns_gallery", " AND donation_campaigns_id = {$campaign['id']} ")->result_array();
+		}
+		return $campaigns_list;
+	}
+
+	public function getCampaigns(){
+		$siteIdQuery = getSiteId();
+		$page =  $_GET['page'];
+		
+		$limit = 10;
+		$offset = 10*$page;
+		
+		$campaigns_list			= $this->queries->fetch_records("donation_campaigns", " AND status=1 ".$siteIdQuery, '', $limit, $offset)->result_array();
+		if(!empty($campaigns_list)){
+			$campaigns_data = $this->refactorCampaign($campaigns_list);
+
+			if(empty($campaigns_data)){
+				echo "";
+			}else{
+				echo json_encode($campaigns_data);
+			}
+		} else {
+			echo "";
+		}
+	}
+
+	public function getDonors(){
+		$project_id =  $_GET['project_id'];
+		$page =  $_GET['page'];
+		$campaign_id = $_GET['campaign_id'];
+
+		$limit = 10;
+		$offset = 10*$page;
+		
+		//$donation_data =  $this->queries->fetch_records("who_donate", " AND donation_projects_id = '". $project_id ."' AND is_paid = 1 ", '', $limit, $offset)-> result_array();
+
+		//foreach ($donation_data as $k => &$donation) {
+		//	$donation['country_code']	= $this->queries->fetch_records("countries", " AND id={$donation['home_country']}")->row('countries_iso_code_2');
+		//}
+		// countries_iso_code_2
+		
+		$donation_data =  $this->db->query("SELECT df.id, ct.countries_iso_code_2 as country_code, df.donate_amount, df.first_name, df.date_added, df.hide_identity FROM `tb_donation_form` df left join tb_countries ct ON df.home_country = ct.id WHERE df.is_paid = 1 and df.donation_projects_id = '".$project_id."'
+		UNION ALL
+		SELECT df.id, ct.countries_iso_code_2 as country_code, df.donate_amount, df.first_name, cp.date_added, df.hide_identity FROM `tb_donation_form` df INNER JOIN tb_donation_payments dp ON df.id = dp.table_id_value AND dp.table_name = 'tb_donation_form' INNER JOIN tb_card_payments cp ON cp.payment_id = dp.id left join tb_countries ct ON df.home_country = ct.id WHERE df.donation_mode = 'recurring' and cp.is_cron = 1 and cp.transaction_id != '' and df.is_paid = 1 and df.donation_projects_id = '".$project_id."'
+        UNION ALL
+		SELECT df.id, ct.countries_iso_code_2 as country_code, df.donate_amount, df.first_name, df.date_added, df.hide_identity FROM `tb_dc_offline_donation` df left join tb_countries ct ON df.home_country = ct.id WHERE df.status = 1 and df.camp_id = '".$campaign_id."'
+		order by date_added DESC limit $offset, $limit")-> result_array();
+        
+		if(empty($donation_data)){
+			echo "";
+		}else{
+			echo json_encode($donation_data);
+		}
+	}
+
+	public function getFeedback(){
+		$project_id =  $_GET['project_id'];
+		$page =  $_GET['page'];
+		$campaign_id =  $_GET['campaign_id'];
+
+		$limit = 10;
+		$offset = 10*$page;
+		
+		/*$result = $this->db->select('tb_dc_comments.*, tb_donation_form.first_name, tb_donation_form.hide_identity')
+		->from('tb_dc_comments')
+		->join('tb_donation_form', 'tb_donation_form.id = tb_dc_comments.df_id')
+		->where('tb_donation_form.is_paid', 1)
+		->where('tb_dc_comments.status', 1)
+		->where('tb_donation_form.donation_projects_id', $project_id)
+		->limit($limit, $offset)
+		->order_by('id', 'desc')
+		->get()->result_array();*/
+		
+		$result =  $this->db->query("SELECT dc.comment, dc.added_date, df.first_name, df.hide_identity FROM `tb_dc_comments` dc join tb_donation_form df ON df.id = dc.df_id WHERE df.is_paid = 1 and df.donation_projects_id = '".$project_id."' and dc.status = 1
+		UNION ALL
+		SELECT dc.comment, dc.date_added as added_date, dc.first_name, dc.hide_identity FROM `tb_dc_offline_donation` dc WHERE dc.status = 1 and dc.camp_id = '".$campaign_id."' and dc.comment_status = 1
+		order by added_date DESC limit $offset, $limit")-> result_array();
+		
+		if(empty($result)){
+			echo "";
+		}else{
+			echo json_encode($result);
+		}
+    }
+	public function getUpdates(){
+		$campaign_id =  $_GET['campaign_id'];
+		$page =  $_GET['page'];
+		
+		$limit = 10;
+		$offset = 10*$page;
+		
+		$updates_list			= $this->queries->fetch_records("donation_campaigns_updates", " AND status=1 AND donation_campaigns_id=$campaign_id ORDER BY date DESC", '', $limit, $offset)->result_array();
+        
+		if(empty($updates_list)){
+			echo "";
+		}else{
+			echo json_encode($updates_list);
+		}
+    }
+
+	public function breadcrumbs( $menu_parent_id = FALSE, $detailPage = FALSE )
+	{		
+		//echo $menu_parent_id; die;
+
+		$TMP_array[]												= array("name"			=> "Home",
+																			"link"			=> site_url());
+		
+		
+		
+		$TMP_breadcrumbs											= array();
+		$TMP_is_exceptional											=  $this->queries->fetch_records("cmsmenu", 
+																									 " 	AND id = '". $menu_parent_id ."' 
+																									 	AND (SELECT name FROM tb_cmsmenu_positions WHERE id = tb_cmsmenu.positionid) IN ('footer') " );
+		
+
+		if ( $TMP_is_exceptional -> num_rows() > 0 )
+		{
+			$TMP_is_exceptional										= " AND parentid != '0' ";	
+		}
+		else
+		{
+			$TMP_is_exceptional										= FALSE;
+		}
+		
+		$this->recursive_menus( $menu_parent_id, TRUE, $TMP_breadcrumbs, TRUE, $TMP_is_exceptional ); 
+		
+		foreach ( $TMP_breadcrumbs as $b_key => $b_value)
+		{
+			if($detailPage){
+				unset($b_value['is_active']);
+			}
+			$TMP_array[]											= $b_value;
+		}
+		
+		if($detailPage){
+			$TMP_array[]											= array("name"				=> $detailPage["project_name"],
+																			"is_active"			=> TRUE);
+		}
+		
+	//echo print_r($TMP_array); die;
+		return $TMP_array;
+	}
+
+	function recursive_menus( $menu_id = FALSE, $is_current_menu, &$return_array = array(), $sort_asc = TRUE, $is_exceptional = FALSE )
+	{
+		
+		$TMP_attributes									= array();
+		
+		if (  $is_current_menu  )
+		{
+			#current_item
+			$TMP											= $this->queries->fetch_records("cmsmenu", " AND id = '". $menu_id ."' ");
+			$TMP_content									= $this->mixed_queries->fetch_records("cmscontent", " AND  menuid = '". $menu_id ."' ");	
+			$TMP_attributes									= $this->functions->set_link_attributes( $TMP->row_array(), $TMP_content, SLUG_PAGE );
+			$TMP_attributes['link']							= $TMP_attributes['href'];
+			$TMP_attributes['is_active']					= TRUE;
+			$return_array[ $TMP->row('id') ]				= $TMP_attributes; #array("name"				=> $TMP->row('name') );	
+		}
+		
+		
+		
+		
+		#recursive -> parent - child - subchild
+		$this->queries->fetch_records("cmsmenu", " AND id = '". $menu_id ."' ", "parentid");
+		$TMP												= $this->queries->fetch_records("cmsmenu", " AND id IN (". $this->db->last_query() .") $is_exceptional ");
+		foreach ( $TMP->result_array() as $t)
+		{
+			$TMP_attributes									= array();
+			$TMP_content									= $this->mixed_queries->fetch_records("cmscontent", " AND  menuid = '". $t['id'] ."' ");	
+			$TMP_attributes									= $this->functions->set_link_attributes( $t, $TMP_content, SLUG_PAGE );
+			$TMP_attributes['link']							= $TMP_attributes['href'];
+			$return_array[ $t['id'] ]						= $TMP_attributes;
+			
+			#sorting values:
+			if ( $sort_asc )
+			{
+				ksort( $return_array );	
+			}
+			
+			
+			
+			$this->recursive_menus( $t['id'], FALSE, $return_array, $sort_asc, $is_exceptional );
+		}
+	}
+
+}

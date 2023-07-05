@@ -1,0 +1,180 @@
+<div class="members_sec fl_lft w_100">
+    <div class="myTableContainer newTableContainer">
+        <div class='showhidefpdiv hidden newCheckbox'></div>
+        <?php 
+        $failure = false;
+		if ( $files_details_1 -> num_rows() > 0 )
+		{
+		?>
+            <h3><?php echo lang_line('text_donationpayments'); ?></h3>
+            <table cellspacing="0" cellpadding="0" class="fl_lft w_100 myTable b_white">
+                <tr class="b_grey t_white">
+                    <td class="txt_lft">Date</td>
+                    <td class="txt_lft">Name</td>
+                    <td class="txt_lft w_45">Purpose</td>
+                    <td class="txt_lft">Amount</td>
+                    <td class="">Method of Payment</td>
+                    <td class="">Receipt Number</td>
+                </tr>
+                <?php
+                $recutrans = array();
+				foreach ( $files_details_1->result_array() as $fd1)
+				{
+                    $class = "paymtr";
+                    $failText = "";
+                    if($fd1['payment_status'] != "Completed" || ($fd1['payment_mode'] == "payeezy" && $fd1['transaction_id'] == "")){
+                        $class .= " hidden";
+                        $failText = ' ( Payment Failed )';
+                        if($fd1['payment_status'] == "Pending" || is_null($fd1['payment_status'])){
+                            if(strtotime("now") < strtotime("+1 day", strtotime($fd1['date_added']))){
+                                $class = "paymtr";
+                                $failText = ' ( Payment Pending )';
+                            } else {
+                                $failure = true;
+                            }
+                        } else {
+                            $failure = true;
+                        }
+                    }
+                    if(is_null($fd1['payment_mode'])){
+                        $fd1['payment_mode'] = "paypal";
+                    }
+                    if($fd1['payment_mode'] == "paypal"){
+                        $refno              = $fd1['reference_number'];
+                    } else {
+                        $refno			= $fd1['transaction_id'];
+                    }
+                    $recurTxt = "";
+                    if($fd1['donation_mode'] == "recurring"){
+                        if(!array_key_exists('k_'.$fd1['id'], $recutrans)){
+                            $recutrans['k_'.$fd1['id']] = $fd1['num_of_recurring'];
+                        }
+                        if($fd1['is_cron'] == 1){
+                            $recurTxt = " ( Scheduled Payment # ".$recutrans['k_'.$fd1['id']]. " )";
+                            $recutrans['k_'.$fd1['id']] -= 1;
+                            if($refno == ""){
+                                $recutrans['k_'.$fd1['id']] += 1;
+                            }
+                        } else {
+                            $recurTxt = " ( Initial Payment )";
+                        }
+                    }
+                ?>
+                    <tr class="in_padding border <?php echo $class; ?>">
+                        <td class="txt_lft"><?php echo date("d M Y, h:i A", strtotime($fd1['date_added']));?></td>
+                        <td class="txt_lft"><?php echo ucwords($fd1['name']);?></td>
+                        <td class="txt_lft"><?php echo $fd1['dpdesc'];?><?php echo $failText . $recurTxt;?></td>
+                        <td class="txt_lft"><?php echo "$ " . $fd1['donate_amount']; ?></td>
+                        <td><?php echo ucfirst($fd1['payment_mode']);?></td>
+                        <td><?php echo $refno;?></td>
+                    </tr>
+                <?php
+				}
+				?>
+            </table>
+		<?php
+        }
+        if ( $files_details_2 -> num_rows() > 0 )
+		{
+		?>
+            <h3><?php echo lang_line('text_membershippayments'); ?></h3>
+            <table cellspacing="0" cellpadding="0" class="fl_lft w_100 myTable b_white">
+                <tr class="b_grey t_white">
+                    <td class="txt_lft">Date</td>
+                    <td class="txt_lft">Name</td>
+                    <td class="txt_lft w_45">Membership Package</td>
+                    <td class="txt_lft">Amount</td>
+                    <td class="">Method of Payment</td>
+                    <td class="">Receipt Number</td>
+                </tr>
+                <?php
+                $recutrans = array();
+				foreach ( $files_details_2->result_array() as $fd2){
+                    $fd2us = unserialize($fd2['paypal_post']);
+                    $class = "paymtr";
+                    $failText = "";
+                    $fd2us['payment_mode'] = "paypal";
+                    if($fd2us['payment_status'] != "Completed"){
+                        $class .= " hidden";
+                        $failText = ' ( Payment Failed )';
+                        $failure = true;
+                    }
+                    $refno              = $fd2us['txn_id'];
+                ?>
+                    <tr class="in_padding border <?php echo $class; ?>">
+                        <td class="txt_lft"><?php echo date("d M Y, h:i A", strtotime($fd2us['payment_date']));?></td>
+                        <td class="txt_lft"><?php echo ucwords($fd2us['first_name'] . " ". $fd2us['last_name']);?></td>
+                        <td class="txt_lft"><?php echo $fd2us['item_name1']; ?><?php echo $failText;?></td>
+                        <td class="txt_lft"><?php echo "$ " . $fd2us['mc_gross']; ?></td>
+                        <td><?php echo ucfirst($fd2us['payment_mode']);?></td>
+                        <td><?php echo $refno;?></td>
+                    </tr>
+                <?php
+				}
+				?>
+            </table>
+		<?php
+        }
+        if ( $files_details_3 -> num_rows() > 0 )
+		{
+		?>
+            <h3><?php echo lang_line('text_eventspayments'); ?></h3>
+            <table cellspacing="0" cellpadding="0" class="fl_lft w_100 myTable b_white">
+                <tr class="b_grey t_white">
+                    <td class="txt_lft">Date</td>
+                    <td class="txt_lft">Name</td>
+                    <td class="txt_lft w_45">Event Name</td>
+                    <td class="txt_lft">Amount</td>
+                    <td class="">Method of Payment</td>
+                    <td class="">Receipt Number</td>
+                </tr>
+                <?php
+                $recutrans = array();
+				foreach ( $files_details_3->result_array() as $fd3){
+                    $fd3us = unserialize($fd3['paypal_post']);
+                    $class = "paymtr";
+                    $failText = "";
+                    $fd3['payment_mode'] = "paypal";
+                    if($fd3['payment_status'] != "Completed"){
+                        $class .= " hidden";
+                        $failText = ' ( Payment Failed )';
+                        $failure = true;
+                    }
+                    $refno              = $fd3us['txn_id'];
+                ?>
+                    <tr class="in_padding border <?php echo $class; ?>">
+                        <td class="txt_lft"><?php echo date("d M Y, h:i A", strtotime($fd3['date_added']));?></td>
+                        <td class="txt_lft"><?php echo ucwords($fd3us['first_name'] . " ". $fd3us['last_name']);?></td>
+                        <td class="txt_lft"><?php echo $fd3['name']; ?><?php echo $failText;?></td>
+                        <td class="txt_lft"><?php echo "$ " . $fd3['payment_gross']; ?></td>
+                        <td><?php echo ucfirst($fd3['payment_mode']);?></td>
+                        <td><?php echo $refno;?></td>
+                    </tr>
+                <?php
+				}
+				?>
+            </table>
+		<?php
+		}
+		?>
+    </div>
+</div>
+<?php
+if($failure){?>
+<script type='text/javascript'>
+    $(document).ready(function(){
+        $('div.showhidefpdiv.hidden').html("<p><input type='checkbox' id='showhidefp'/> <span>Show/Hide Failed Payments</span></p>");
+        $('div.showhidefpdiv.hidden').removeClass("hidden");
+        $("#showhidefp").click(function() {
+            if($(this).is(":checked")) {
+                $("tr.paymtr.hidden").addClass('shown');
+                $("tr.paymtr.shown.hidden").removeClass('hidden');
+            } else {
+                $("tr.paymtr.shown").addClass('hidden');
+                $("tr.paymtr.hidden.shown").removeClass('shown');
+            }
+        });
+    });
+</script>
+<?php
+} ?>
